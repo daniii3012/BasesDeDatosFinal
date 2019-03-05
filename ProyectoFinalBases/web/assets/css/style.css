@@ -1,0 +1,307 @@
+body {
+	/*background-image: url("../../images/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;*/
+	background-color: rgb(255, 255, 255);
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0%;	
+}
+
+/*
+Imagenes
+*/
+
+img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	position: relative;
+	max-width: 70%;
+	max-height: 70%;
+	/*width: 100%;
+	height: auto;*/
+}
+
+/*
+Menu 
+*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #8C1919;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+li a:hover {
+	background-color: rgb(128, 26, 26);
+	border-radius: 5px;
+}
+
+.active {
+	background-color: rgb(151, 27, 27);
+	border-radius: 5px;
+}
+
+/*
+Div's
+*/
+
+.divImg {
+	/*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/banner.jpg");*/
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 250px;
+	overflow: hidden;
+}
+
+.divContainer {
+	margin: auto;
+	background-color: rgba(0, 0, 0, 0);
+	margin-left: 5%;
+	margin-right: 5%;
+	/*overflow-x: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 25px;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px rgb(209, 209, 209);
+	transform: translate(0, -100px);
+	-webkit-transform: translate(0, -100px);*/
+}
+
+.divBanner {
+	color: #fff;
+	padding: 15px;
+	background-color: #8C1919;
+}
+
+.divTablaColor {
+	color: #fff;
+	overflow-x: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	/*float: left;*/
+	padding: 25px;
+	border-radius: 5px;
+	background-color: #8C1919;
+}
+.divTabla {
+	overflow-x: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 25px;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px rgb(209, 209, 209);
+}
+.divContent {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+/*
+Apariencia igual en navegadores mobiles
+*/
+
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="date"],
+.input-checkbox {
+    -webkit-appearance: none;
+}
+
+/*
+Botones
+*/
+
+.button {
+	display: inline-block;
+	padding: 15px;
+	font-size: 16px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: rgb(172, 0, 0);
+	border: none;
+	border-radius: 2.5px;
+	box-shadow: 0 1px 1px rgb(141, 0, 0);
+}
+  
+.button:hover {
+	background-color: rgb(128, 26, 26);
+}
+  
+.button:active {
+	background-color: rgb(151, 27, 27);
+	/*box-shadow: 0 5px rgb(0, 58, 146);*/
+	transform: translateY(1px);
+}
+  
+/*
+Input
+*/
+  
+
+input {
+	border-radius: 2.5px;
+	border: 2px solid transparent;
+	padding: 15px;
+	outline: none;
+	-webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+input[type=text] {
+  
+  border-bottom: 2px solid rgb(172, 0, 0);
+}
+input[type=text]:focus {
+	border: 2px solid rgb(172, 0, 0);
+}
+
+input[type=text]:disabled {
+	background-color: rgb(241, 241, 241);
+	border: 2px solid rgb(172, 0, 0);
+}
+input[type=number] {
+  
+  border-bottom: 2px solid rgb(172, 0, 0);
+}
+input[type=number]:focus {
+	border: 2px solid rgb(172, 0, 0);
+}
+
+input[type=number]:disabled {
+	background-color: rgb(241, 241, 241);
+	border: 2px solid rgb(172, 0, 0);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+input[type=radio] {
+	padding: 15px;
+}
+
+select {
+	border: 2px solid transparent;
+  border-bottom: 2px solid rgb(172, 0, 0);
+	border-radius: 2.5px;
+	padding: 15px;
+	-webkit-appearance: textfield;
+	outline: none;
+	-webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+select:focus {
+	border: 2px solid rgb(172, 0, 0);
+}
+
+select:disabled {
+	background-color: rgb(241, 241, 241);
+	border: 2px solid rgb(172, 0, 0);
+}
+
+select option {
+	background-color: white;
+	color: black;
+	padding: 15px;
+}
+
+
+/*
+input[type=date] {
+  border: none;
+  border-bottom: 2px solid rgb(172, 0, 0);
+}
+input[type=number] {
+  border: none;
+  border-bottom: 2px solid rgb(172, 0, 0);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input[type="date"]:focus {
+	background-color: #5E95E0;
+	border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+input[type="text"]:focus {
+	background-color: #5E95E0;
+	border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+input[type="number"]:focus {
+	background-color: #5E95E0;
+	border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+
+input[type="date"] {
+	padding: 9px;
+}
+::placeholder { 
+	color: rgb(224, 224, 224);
+	opacity: 1; 
+}
+  
+:-ms-input-placeholder { 
+	color: rgb(224, 224, 224);
+}
+  
+::-ms-input-placeholder { 
+	color: rgb(224, 224, 224);
+}
+
+*/
+/*
+Tablas
+*/
+
+td, th {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.busqueda {
+	width: 100%;
+}
+
+.reserva {
+	float: right;
+}
+
+/*
+Exmaples
+*/
