@@ -82,9 +82,36 @@
 					</table>
 				</div>
 				<div class="divTabla" align="center">
-					<% while (material.next()){ %>
+
 					<table class="busqueda">
+						<tr class="busquedaTitulo">
+							<td>
+								ID
+							</td>
+							<td>
+								Titulo
+							</td>
+							<td>
+								Autor(es)
+							</td>
+							<td>
+								Fecha de Publicacion
+							</td>
+							<td>
+								Tipo de Material
+							</td>
+							<td>
+								Tema
+							</td>
+							<td class="reserva">
+								
+							</td>
+						</tr>
+						<% while (material.next()){ %>
 						<tr>
+							<td>
+								<%= material.getString("k_isbnissn") %>
+							</td>
 							<td>
 								<%= material.getString("n_titulo") %>
 							</td>
@@ -94,15 +121,22 @@
 							<td>
 								<%= material.getString("f_publicacion") %>
 							</td>
+							<td>
+								<%= material.getString("n_tipo") %>
+							</td>
+							<td>
+								<%= material.getString("n_tema") %>
+							</td>
 							<td class="reserva">
 								<!--<input type="submit" value="Reservar" class="button">-->
 								<input type="checkbox" id="" name="" value="">
 							</td>
 						</tr>
+						<% }%>
 					</table>
-					
-					<% }%>
-                                        <input type="submit" value="Reservar" class="button">
+
+
+					<input type="submit" value="Reservar" class="button">
 				</div>
 			</form>
 		</div>

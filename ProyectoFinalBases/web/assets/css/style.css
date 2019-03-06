@@ -340,6 +340,10 @@ td, th {
 
 .busqueda {
 	width: 100%;
+	float: left;
+}
+.busquedaTitulo {
+	font-weight: bold;
 }
 
 .reserva {
