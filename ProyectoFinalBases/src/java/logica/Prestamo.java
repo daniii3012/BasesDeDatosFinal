@@ -10,5 +10,8 @@ package logica;
  * @author Daniel
  */
 public class Prestamo {
-    
+    private int idPrestamo; // k_prestamo
+    private String fechaLimiteDevolucionPrestamo; // f_limiteDevolucion
+    private String fechaDevolucionPrestamo; // f_devolucion
+    private String fechaReclamacion; // f_reclamacion
 }
