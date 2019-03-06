@@ -74,7 +74,7 @@
 								</select>
 							</td>
 							<td>
-								<input class="inputColor" type="number" id="" placeholder="Codigo" required>
+								<input class="inputColor" type="number" id="" placeholder="Código" required>
 							</td>
 						</tr>
 					</table>
