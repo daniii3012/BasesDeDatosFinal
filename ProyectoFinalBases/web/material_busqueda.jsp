@@ -11,6 +11,7 @@
 
 <% ResultSet materialBibliografico = (ResultSet)session.getAttribute("bibliografico"); %>
 <% ResultSet materialAudiovisual = (ResultSet)session.getAttribute("audiovisual"); %>
+<% ResultSet copia = (ResultSet)session.getAttribute("copia"); %>
 
 <html>
 
@@ -37,7 +38,7 @@
 	</div>
 	<div class="divContainer" align="center">
 		<div class="divContent">
-			<form action="">
+			<form action="AgregarReserva">
 				<div class="divTablaColor" align="center">
 
 					<table>
@@ -77,7 +78,7 @@
 								</select>
 							</td>
 							<td>
-								<input class="inputColor" type="number" id="" placeholder="Código" required>
+								<input class="inputColor" type="number" id="codigoEstudiante" name="codigoEstudiante" placeholder="Código" required>
 							</td>
 						</tr>
 					</table>
@@ -105,7 +106,7 @@
 								Tema
 							</td>
 							<td class="reserva">
-								
+
 							</td>
 						</tr>
 						<% while (materialBibliografico.next()){ %>
@@ -130,11 +131,11 @@
 							</td>
 							<td class="reserva">
 								<!--<input type="submit" value="Reservar" class="button">-->
-								<input type="checkbox" id="" name="" value="">
+								<input type="checkbox" id="reservarBibliografico" name="reservarBibliografico" value="<%= materialBibliografico.getString("k_isbnissn") %>">
 							</td>
 						</tr>
 						<% }%>
-                                                <% while (materialAudiovisual.next()){ %>
+						<% while (materialAudiovisual.next()){ %>
 						<tr>
 							<td>
 								<%= materialAudiovisual.getString("k_isbnissn") %>
@@ -156,7 +157,7 @@
 							</td>
 							<td class="reserva">
 								<!--<input type="submit" value="Reservar" class="button">-->
-								<input type="checkbox" id="" name="" value="">
+								<input type="checkbox" id="reservarAudiovisual" name="reservarAudiovisual" value="<%= materialAudiovisual.getString("k_isbnissn") %>">
 							</td>
 						</tr>
 						<% }%>

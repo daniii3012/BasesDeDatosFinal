@@ -21,4 +21,54 @@ public abstract class Material {
     
     // Revisar
     private String nombreAutorMaterial; // k_autor, k_isbnissn
+
+    public long getIdMaterial() {
+        return idMaterial;
+    }
+
+    public void setIdMaterial(long idMaterial) {
+        this.idMaterial = idMaterial;
+    }
+
+    public String getTituloMaterial() {
+        return tituloMaterial;
+    }
+
+    public void setTituloMaterial(String tituloMaterial) {
+        this.tituloMaterial = tituloMaterial;
+    }
+
+    public Date getFechaPublicacionMaterial() {
+        return fechaPublicacionMaterial;
+    }
+
+    public void setFechaPublicacionMaterial(Date fechaPublicacionMaterial) {
+        this.fechaPublicacionMaterial = fechaPublicacionMaterial;
+    }
+
+    public String getTipoMaterial() {
+        return tipoMaterial;
+    }
+
+    public void setTipoMaterial(String tipoMaterial) {
+        this.tipoMaterial = tipoMaterial;
+    }
+
+    public String getTemaMaterial() {
+        return temaMaterial;
+    }
+
+    public void setTemaMaterial(String temaMaterial) {
+        this.temaMaterial = temaMaterial;
+    }
+
+    public String getNombreAutorMaterial() {
+        return nombreAutorMaterial;
+    }
+
+    public void setNombreAutorMaterial(String nombreAutorMaterial) {
+        this.nombreAutorMaterial = nombreAutorMaterial;
+    }
+    
+    
 }

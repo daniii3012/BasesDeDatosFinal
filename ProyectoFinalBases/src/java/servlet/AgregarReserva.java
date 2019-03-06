@@ -5,21 +5,22 @@
  */
 package servlet;
 
-import bd.BDCopia;
 import bd.BDMaterial;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logica.Material;
+import logica.MaterialAudiovisual;
+import logica.MaterialBibliografico;
 
 /**
  *
  * @author Daniel
  */
-public class BuscarMaterial extends HttpServlet {
+public class AgregarReserva {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,31 +36,51 @@ public class BuscarMaterial extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        BDMaterial material = new BDMaterial();
-        BDCopia copia = new BDCopia();
-        
+        Material materialBibliografico;
+        Material materialAudiovisual;
+
+        BDMaterial materialBd = new BDMaterial();
+        //DBContactos conDb = new DBContactos();
         try {
+            int idMaterialBibliografico = Integer.parseInt(request.getParameter("reservarBibliografico"));
+            int idMaterialAudiovisual = Integer.parseInt(request.getParameter("reservarAudiovisual"));
             
-            ResultSet resBibliografico = material.getMaterialBibliografico();
-            ResultSet resAudiovisual = material.getMaterialAudiovisual();
-            ResultSet resCopia = copia.getCopia();
+            materialBibliografico = new MaterialBibliografico();
+            materialAudiovisual = new MaterialAudiovisual();
             
-            request.getSession().setAttribute("bibliografico", resBibliografico);
-            request.getSession().setAttribute("audiovisual", resAudiovisual);
-            request.getSession().setAttribute("copia", resCopia);
+            ResultSet resBibliografico = materialBd.getMaterialBibliograficoById(idMaterialBibliografico);
+            ResultSet resAudiovisual = materialBd.getMaterialAudiovisualById(idMaterialAudiovisual);
             
-            response.sendRedirect("material_busqueda.jsp");
+            if(resBibliografico.next()){
+                materialBibliografico.setIdMaterial(resBibliografico.getInt("k_id"));
+                materialBibliografico.setTituloMaterial(tituloMaterial);
+            }
             
+            if(res.next()){
+                personaje.setId(res.getInt("k_id"));
+                personaje.setNombre(res.getString("n_nombre"));
+                personaje.setHabilidad(res.getString("n_habilidad"));
+                personaje.setEspecie(res.getString("n_color"));
+            }
+            out.write(opc);
+            if(opc.equals("delete")){
+                personajeBd.borrarPersonaje(personaje);
+                response.sendRedirect("Inicio");
+            }
+
+            response.sendRedirect("index.html");
         } catch (Exception e) {
+
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Inicio</title>");  
+            out.println("<title>Servlet Inicio</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Error at " + e.toString() + "</h1>");
-            out.println("<p>Error: "+material.getMensaje()+"</p>");
+            out.println("<p>seguimiento: " + personajeBd.getMensaje() + "</p>");
             out.println("</body>");
             out.println("</html>");
+
         } finally {
             out.close();
         }
