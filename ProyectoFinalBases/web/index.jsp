@@ -14,9 +14,9 @@
 	<div class="divBanner">
 		<h2>
 			<ul>
-				<li><a class="active" href="index.html">Inicio</a></li>
-				<li><a href="material.html">Buscar Material</a></li>
-				<li><a href="estudiante.html">Buscar Reservas</a></li>
+				<li><a class="active" href="index.jsp">Inicio</a></li>
+				<li><a href="material.jsp">Buscar Material</a></li>
+				<li><a href="estudiante.jsp">Buscar Reservas</a></li>
 			</ul>
 		</h2>
 	</div>
@@ -28,12 +28,12 @@
 				<table>
 					<tr>
 						<td>
-							<form action="material.html">
+							<form action="material.jsp">
 								<input type="submit" value="Buscar Material" class="button">
 							</form>
 						</td>
 						<td>
-							<form action="estudiante.html">
+							<form action="estudiante.jsp">
 								<input type="submit" value="Buscar Reservas" class="button">
 							</form>
 						</td>

@@ -1,11 +1,11 @@
-<%@page import=""%>
-<%@page import=""%>
+/*<%@page import=""%>
+<%@page import=""%>*/
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 
-<% ResultSet /*nombreVariable*/ = (ResultSet)session.getAttribute("/*atributo*/"); %>
+/*<% ResultSet nombreVariable = (ResultSet)session.getAttribute("/*atributo*/"); %>*/
 
 <html>
 
@@ -22,9 +22,9 @@
 	<div class="divBanner">
 		<h2>
 			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="material.html">Buscar Material</a></li>
-				<li><a href="estudiante.html">Buscar Reservas</a></li>
+				<li><a href="index.jsp">Inicio</a></li>
+				<li><a href="material.jsp">Buscar Material</a></li>
+				<li><a href="estudiante.jsp">Buscar Reservas</a></li>
 			</ul>
 		</h2>
 	</div>
@@ -78,17 +78,17 @@
 					</table>
 				</div>
 				<div class="divTabla" align="center">
-					<% while (/*nombreVariable*/.next()){ %>
+					/*<% while (nombreVariable.next()){ %>*/
 					<table class="busqueda">
 						<tr>
 							<td>
-								<%= /*nombreVariable*/.getString("k_id") %> /Titulo
+								/*<%= nombreVariable.getString("k_id") %>*/ /Titulo
 							</td>
 							<td>
-								<%= personaje.getString("n_nombre") %> /Autor
+								/*<%= nombreVariable.getString("k_id") %>*/ /Autor
 							</td>
 							<td>
-								<%= personaje.getString("n_nombre") %> /Tipo de Material
+								/*<%= nombreVariable.getString("k_id") %>*/ /Tipo de Material
 							</td>
 							<td class="reserva">
 								<input type="submit" value="Reservar" class="button">
@@ -98,7 +98,7 @@
 							</td>
 						</tr>
 					</table>
-					<% }%>
+					/*<% }%>*/
 				</div>
 			</form>
 		</div>
