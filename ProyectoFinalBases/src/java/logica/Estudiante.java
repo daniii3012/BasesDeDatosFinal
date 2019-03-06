@@ -5,6 +5,8 @@
  */
 package logica;
 
+import java.util.Date;
+
 /**
  *
  * @author Daniel
@@ -16,6 +18,6 @@ public class Estudiante {
     private int idEstudiante; //q_identificacion USAR: BigDecimal.valueOf(idEstudiante)
     private String tipoIdEstudiante; // n_tipoIdentificacion
     private String generoEstudiante; // n_genero
-    private String fechaNacimientoEst; // f_nacimiento
+    private Date fechaNacimientoEstudiante = new Date(); // f_nacimiento
     private String estadoEstudiante; // i_estudiante
 }
