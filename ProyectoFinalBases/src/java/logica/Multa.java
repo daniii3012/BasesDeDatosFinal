@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class Multa {
     private int idMulta; // k_multa USAR: BigDecimal.valueOf(idMulta)

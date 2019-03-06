@@ -7,7 +7,7 @@ package bd;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class BDEstudiante {
     

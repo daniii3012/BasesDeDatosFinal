@@ -7,7 +7,7 @@ package logica;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class Copia {
     private int idCopia; // k_copia USAR: BigDecimal.valueOf(idCopia)
