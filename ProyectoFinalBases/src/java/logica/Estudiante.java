@@ -17,7 +17,7 @@ public class Estudiante {
     private String apellidoEstudiante; // n_apellido
     private int idEstudiante; //q_identificacion USAR: BigDecimal.valueOf(idEstudiante)
     private String tipoIdEstudiante; // n_tipoIdentificacion
-    private String generoEstudiante; // n_genero
     private Date fechaNacimientoEstudiante = new Date(); // f_nacimiento
-    private String estadoEstudiante; // i_estudiante
+    private String generoEstudiante; // n_genero    
+    private String estadoEstudiante; // i_estado_estudiante
 }

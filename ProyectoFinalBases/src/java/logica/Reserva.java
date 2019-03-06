@@ -5,14 +5,16 @@
  */
 package logica;
 
+import java.util.Date;
+
 /**
  *
  * @author Daniel
  */
 public class Reserva {
-    private int idReserva; // k_reserva
-    private String fechaReserva; // f_reservacion
-    private String fechaCancelacionReserva; // f_cancelacion
+    private int idReserva; // k_reserva USAR: BigDecimal.valueOf(idReserva)
+    private Date fechaReserva = new Date(); // f_reservacion
+    private Date fechaCancelacionReserva = new Date(); // f_cancelacion
     private String estadoReserva; // i_estado_reserva
-    private int horasReserva; // q_nhoras
+    private int horasReserva; // q_nhoras USAR: BigDecimal.valueOf(horasReserva)
 }
