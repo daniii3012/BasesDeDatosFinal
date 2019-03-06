@@ -5,13 +5,16 @@
  */
 package logica;
 
+import java.util.Date;
+
 /**
  *
  * @author Daniel
  */
 public class Multa {
-    private int idMulta; // k_multa
+    private int idMulta; // k_multa USAR: BigDecimal.valueOf(idMulta)
+    private double valorMulta; // v_multa USAR: BigDecimal.valueOf(valorMulta)
     private String estadoMulta; // i_estado_multa
-    private String fechaPagoMulta; // f_pago
-    private double valorMulta; // v_multa
+    private Date fechaPagoMulta = new Date(); // f_pago
+    
 }

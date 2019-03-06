@@ -10,7 +10,7 @@ package logica;
  * @author Daniel
  */
 public class Copia {
-    private int idCopia; // k_copia
+    private int idCopia; // k_copia USAR: BigDecimal.valueOf(idCopia)
     private String estadoPrestamoCopia; // i_estado_prestamo
     private String estadoFisicoCopia; // i_estado_fisico
     private String disponibleCopia; // i_disponible

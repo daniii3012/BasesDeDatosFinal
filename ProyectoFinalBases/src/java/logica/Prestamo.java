@@ -5,13 +5,16 @@
  */
 package logica;
 
+import java.util.Date;
+
 /**
  *
  * @author Daniel
  */
 public class Prestamo {
-    private int idPrestamo; // k_prestamo
-    private String fechaLimiteDevolucionPrestamo; // f_limiteDevolucion
-    private String fechaDevolucionPrestamo; // f_devolucion
-    private String fechaReclamacion; // f_reclamacion
+    private int idPrestamo; // k_prestamo USAR: BigDecimal.valueOf(idPrestamo)
+    private Date fechaReclamacion = new Date(); // f_reclamacion    
+    private Date fechaDevolucionPrestamo = new Date(); // f_devolucion
+    private Date fechaLimiteDevolucionPrestamo = new Date(); // f_limite_devolucion
+    
 }
