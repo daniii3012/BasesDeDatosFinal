@@ -17,5 +17,7 @@ public class Reserva {
     private Date fechaReserva = new Date(); // f_reservacion 
     private Date fechaCancelacionReserva = new Date(); // f_cancelacion 
     private String estadoReserva; // i_estado_reserva
+
     private long horasReserva; // q_nhoras 
+
 }

@@ -45,7 +45,6 @@ public class BuscarMaterial extends HttpServlet {
             request.getSession().setAttribute("audiovisual", res1);
             
             response.sendRedirect("material_busqueda.jsp");
-            
         } catch (Exception e) {
             out.println("<html>");
             out.println("<head>");
