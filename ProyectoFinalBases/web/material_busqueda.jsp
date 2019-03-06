@@ -1,15 +1,16 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-<%--<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
 <%@page import="logica.Material"%>
 <%@page import="logica.MaterialAudiovisual"%>
 <%@page import="logica.MaterialBibliografico"%>
-<%@page import="java.sql.ResultSet"%>--%>
+<%@page import="java.sql.ResultSet"%>
 
 <!DOCTYPE html>
 
-<%--<% ResultSet material = (ResultSet)session.getAttribute("material"); %>--%>
+<% ResultSet materialBibliografico = (ResultSet)session.getAttribute("bibliografico"); %>
+<% ResultSet materialAudiovisual = (ResultSet)session.getAttribute("audiovisual"); %>
 
 <html>
 
@@ -82,26 +83,87 @@
 					</table>
 				</div>
 				<div class="divTabla" align="center">
-					<%--<% while (material.next()){ %>--%>
+
 					<table class="busqueda">
+						<tr class="busquedaTitulo">
+							<td>
+								ID
+							</td>
+							<td>
+								Titulo
+							</td>
+							<td>
+								Autor(es)
+							</td>
+							<td>
+								Fecha de Publicacion
+							</td>
+							<td>
+								Tipo de Material
+							</td>
+							<td>
+								Tema
+							</td>
+							<td class="reserva">
+								
+							</td>
+						</tr>
+						<% while (materialBibliografico.next()){ %>
 						<tr>
 							<td>
-								<%--<%= material.getString("n_titulo") %>--%>
+								<%= materialBibliografico.getString("k_isbnissn") %>
+							</td>
+							<td>
+								<%= materialBibliografico.getString("n_titulo") %>
 							</td>
 							<td>
 								<%--<%= material.getString("") %>--%> /Autor
 							</td>
 							<td>
-								<%--<%= material.getString("f_publicacion") %>--%>
+								<%= materialBibliografico.getString("f_publicacion") %>
+							</td>
+							<td>
+								<%= materialBibliografico.getString("n_tipo") %>
+							</td>
+							<td>
+								<%= materialBibliografico.getString("n_tema") %>
 							</td>
 							<td class="reserva">
 								<!--<input type="submit" value="Reservar" class="button">-->
 								<input type="checkbox" id="" name="" value="">
 							</td>
 						</tr>
+						<% }%>
+                                                <% while (materialAudiovisual.next()){ %>
+						<tr>
+							<td>
+								<%= materialAudiovisual.getString("k_isbnissn") %>
+							</td>
+							<td>
+								<%= materialAudiovisual.getString("n_titulo") %>
+							</td>
+							<td>
+								<%--<%= material.getString("") %>--%> /Autor
+							</td>
+							<td>
+								<%= materialAudiovisual.getString("f_publicacion") %>
+							</td>
+							<td>
+								<%= materialAudiovisual.getString("n_tipo") %>
+							</td>
+							<td>
+								<%= materialAudiovisual.getString("n_tema") %>
+							</td>
+							<td class="reserva">
+								<!--<input type="submit" value="Reservar" class="button">-->
+								<input type="checkbox" id="" name="" value="">
+							</td>
+						</tr>
+						<% }%>
 					</table>
+
+
 					<input type="submit" value="Reservar" class="button">
-					<%--<% }%>--%>
 				</div>
 			</form>
 		</div>

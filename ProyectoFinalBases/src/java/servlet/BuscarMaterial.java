@@ -39,8 +39,10 @@ public class BuscarMaterial extends HttpServlet {
         try {
             
             ResultSet res = material.getMaterialBibliografico();
+            ResultSet res1 = material.getMaterialAudiovisual();
             
-            request.getSession().setAttribute("material", res);
+            request.getSession().setAttribute("bibliografico", res);
+            request.getSession().setAttribute("audiovisual", res1);
             
             response.sendRedirect("material_busqueda.jsp");
         } catch (Exception e) {

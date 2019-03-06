@@ -13,8 +13,8 @@ import java.util.Date;
  * @author 
  */
 public class Multa {
-    private int idMulta; // k_multa USAR: BigDecimal.valueOf(idMulta)
-    private double valorMulta; // v_multa USAR: BigDecimal.valueOf(valorMulta)
+    private long idMulta; // k_multa 
+    private double valorMulta; // v_multa 
     private String estadoMulta; // i_estado_multa
     private Date fechaPagoMulta = new Date(); // f_pago
     

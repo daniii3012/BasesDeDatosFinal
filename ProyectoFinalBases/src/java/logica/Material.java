@@ -13,7 +13,7 @@ import java.util.Date;
  * @author Daniel
  */
 public abstract class Material {
-    private int idMaterial; // k_isbnissn USAR: BigDecimal.valueOf(idMaterial)
+    private long idMaterial; // k_isbnissn 
     private String tituloMaterial; // n_titulo
     private Date fechaPublicacionMaterial = new Date(); // f_publicacion
     private String tipoMaterial; // n_tipo    
