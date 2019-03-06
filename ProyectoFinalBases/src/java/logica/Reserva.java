@@ -20,7 +20,6 @@ public class Reserva {
 
     private long horasReserva; // q_nhoras 
 
-<<<<<<< HEAD
     public long getIdReserva() {
         return idReserva;
     }
@@ -60,7 +59,4 @@ public class Reserva {
     public void setHorasReserva(long horasReserva) {
         this.horasReserva = horasReserva;
     }
-    
-=======
->>>>>>> 2cefdde72ce43d838ec9c8eed9fbfe354ff33abe
 }
