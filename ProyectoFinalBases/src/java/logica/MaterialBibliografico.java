@@ -9,6 +9,6 @@ package logica;
  *
  * @author Daniel
  */
-public class MaterialBibliografico {
+public class MaterialBibliografico extends Material{
     
 }
