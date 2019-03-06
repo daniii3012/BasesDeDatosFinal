@@ -22,7 +22,7 @@
 	<div class="divBanner">
 		<h2>
 			<ul>
-				<li><a href="index.jsp">Inicio</a></li>
+				<li><a href="index.html">Inicio</a></li>
 				<li><a href="material.jsp">Buscar Material</a></li>
 				<li><a href="estudiante.jsp">Buscar Reservas</a></li>
 			</ul>

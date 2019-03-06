@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +15,7 @@
 	<div class="divBanner">
 		<h2>
 			<ul>
-				<li><a href="index.jsp">Inicio</a></li>
+				<li><a href="index.html">Inicio</a></li>
 				<li><a class="active" href="material.jsp">Buscar Material</a></li>
 				<li><a href="estudiante.jsp">Buscar Reservas</a></li>
 			</ul>
@@ -26,7 +26,7 @@
 	<div class="divContainer" align="center">
 		<div class="divContent">
 			<div class="divTabla" align="center">
-				<form action="material_busqueda.jsp">
+				<form action="BuscarMaterial">
 					<table>
 						<tr>
 							<td>

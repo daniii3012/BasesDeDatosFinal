@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logica;
+package bd;
 
 /**
  *
  * @author Daniel
  */
-public class Usuario {
+public class BDPrestamo {
     
 }

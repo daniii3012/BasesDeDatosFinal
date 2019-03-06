@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +15,7 @@
 	<div class="divBanner">
 		<h2>
 			<ul>
-				<li><a href="index.jsp">Inicio</a></li>
+				<li><a href="index.html">Inicio</a></li>
 				<li><a href="material.jsp">Buscar Material</a></li>
 				<li><a class="active" href="estudiante.jsp">Buscar Reservas</a></li>
 			</ul>
@@ -25,7 +25,7 @@
 	</div>
 	<div class="divContainer" align="center">
 		<div class="divContent">
-			<form action="estudiante_reservaciones.jsp">
+			<form action="BuscarReserva">
 				<div class="divTabla" align="center">
 					<table>
 						<tr>
