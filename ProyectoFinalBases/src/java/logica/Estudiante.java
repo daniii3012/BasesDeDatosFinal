@@ -6,6 +6,7 @@
 package logica;
 
 import java.util.Date;
+//import java.sql.Date;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Estudiante {
     private String apellidoEstudiante; // n_apellido
     private int idEstudiante; //q_identificacion USAR: BigDecimal.valueOf(idEstudiante)
     private String tipoIdEstudiante; // n_tipo_identificacion
-    private Date fechaNacimientoEstudiante = new Date(); // f_nacimiento
+    private Date fechaNacimientoEstudiante = new Date(); // f_nacimiento 
     private String generoEstudiante; // n_genero    
     private String estadoEstudiante; // i_estado_estudiante
 }
