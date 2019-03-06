@@ -15,7 +15,4 @@ public class Reserva {
     private String fechaCancelacionReserva; // f_cancelacion
     private String estadoReserva; // i_estado_reserva
     private int horasReserva; // q_nhoras
-    /*
-    Falta poner n_material
-    */
 }
