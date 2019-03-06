@@ -22,9 +22,14 @@ public class BDMaterial {
     }
     
     public ResultSet getMaterialBibliografico() throws SQLException {
-        PreparedStatement pstm = conexion.getConexion().prepareStatement("SELECT * FROM bibliografico");
+        String strSQL = "SELECT * FROM bibliografico";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         ResultSet res = pstm.executeQuery();
         return res;
+    }
+    
+    public String getMensaje() {
+        return conexion.getMensaje();
     }
     
 }

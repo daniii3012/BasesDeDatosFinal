@@ -1,13 +1,15 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-<%--<%@page import=""%>
-<%@page import=""%>
+<%--<%@page import="java.util.List"%>
+<%@page import="logica.Material"%>
+<%@page import="logica.MaterialAudiovisual"%>
+<%@page import="logica.MaterialBibliografico"%>
 <%@page import="java.sql.ResultSet"%>--%>
 
 <!DOCTYPE html>
 
-<%--<% ResultSet nombreVariable = (ResultSet)session.getAttribute("/*atributo*/"); %>--%>
+<%--<% ResultSet material = (ResultSet)session.getAttribute("material"); %>--%>
 
 <html>
 
@@ -80,17 +82,17 @@
 					</table>
 				</div>
 				<div class="divTabla" align="center">
-					<%--<% while (nombreVariable.next()){ %>--%>
+					<%--<% while (material.next()){ %>--%>
 					<table class="busqueda">
 						<tr>
 							<td>
-								<%--<%= nombreVariable.getString("k_id") %>--%> /Titulo
+								<%--<%= material.getString("n_titulo") %>--%>
 							</td>
 							<td>
-								<%--<%= nombreVariable.getString("k_id") %>--%> /Autor
+								<%--<%= material.getString("") %>--%> /Autor
 							</td>
 							<td>
-								<%--<%= nombreVariable.getString("k_id") %>--%> /Tipo de Material
+								<%--<%= material.getString("f_publicacion") %>--%>
 							</td>
 							<td class="reserva">
 								<!--<input type="submit" value="Reservar" class="button">-->
