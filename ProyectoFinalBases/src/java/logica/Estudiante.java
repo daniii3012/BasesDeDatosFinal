@@ -10,5 +10,12 @@ package logica;
  * @author Daniel
  */
 public class Estudiante {
-    
+    private int codigoEstudiante; // k_estudiante
+    private String nombreEstudiante; // n_nombre
+    private String apellidoEstudiante; // n_apellido
+    private int idEstudiante; //q_identificacion
+    private String tipoIdEstudiante; // n_tipoIdentificacion
+    private String generoEstudiante; // n_genero
+    private String fechaNacimientoEst; // f_nacimiento
+    private String estadoEstudiante; // i_estudiante
 }
