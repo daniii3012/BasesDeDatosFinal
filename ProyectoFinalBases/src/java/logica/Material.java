@@ -18,7 +18,7 @@ public abstract class Material {
     private Date fechaPublicacionMaterial = new Date(); // f_publicacion
     private String tipoMaterial; // n_tipo    
     private String temaMaterial; // n_tema
-    /*
-    Falta poner n_autor
-    */
+    
+    // Revisar
+    private String nombreAutorMaterial; // k_autor, k_isbnissn
 }
