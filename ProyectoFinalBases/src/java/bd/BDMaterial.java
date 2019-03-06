@@ -16,17 +16,20 @@ import java.sql.SQLException;
  */
 public class BDMaterial {
     
-    Connection conexion;
+    BDConexion conexion;
     
     public BDMaterial(){
-        conexion = ServiceLocator.getInstance().tomarConexion();
+        conexion = new BDConexion();
     }
     
     public ResultSet getMaterialBibliografico() throws SQLException {
         String strSQL = "SELECT * FROM bibliografico";
-        PreparedStatement pstm = conexion.prepareStatement(strSQL);
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         ResultSet res = pstm.executeQuery();
         return res;
     }
     
+    public String getMensaje() {
+        return conexion.getMensaje();
+    }
 }
