@@ -1,11 +1,11 @@
-/*<%@page import=""%>
-<%@page import=""%>*/
+<!--<%@page import=""%>
+<%@page import=""%>
 <%@page import="java.sql.ResultSet"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>-->
 
 <!DOCTYPE html>
 
-/*<% ResultSet nombreVariable = (ResultSet)session.getAttribute("/*atributo*/"); %>*/
+<!--<% ResultSet nombreVariable = (ResultSet)session.getAttribute("/*atributo*/"); %>-->
 
 <html>
 
@@ -47,21 +47,21 @@
 				</table>
 			</div>
 			<div class="divTabla" align="center">
-				/*<% while (nombreVariable.next()){ %>*/
+				<!--<% while (nombreVariable.next()){ %>-->
 				<table class="busqueda">
 					<tr>
 						<td>
-							/*<%= nombreVariable.getString("k_id") %>*/ /Titulo
+							<!--<%= nombreVariable.getString("k_id") %>--> /Titulo
 						</td>
 						<td>
-							/*<%= nombreVariable.getString("k_id") %>*/ /Autor
+							<!--<%= nombreVariable.getString("k_id") %>--> /Autor
 						</td>
 						<td>
-							/*<%= nombreVariable.getString("k_id") %>*/ /Tipo de Material
+							<!--<%= nombreVariable.getString("k_id") %>--> /Tipo de Material
 						</td>
 					</tr>
 				</table>
-				/*<% }%>*/
+				<!--<% }%>-->
 			</div>
 		</div>
 		<input type="submit" value="Volver" class="button" onclick="goBack()">
