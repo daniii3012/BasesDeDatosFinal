@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import bd.BDCopia;
 import bd.BDMaterial;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -35,14 +36,17 @@ public class BuscarMaterial extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         BDMaterial material = new BDMaterial();
+        BDCopia copia = new BDCopia();
         
         try {
             
-            ResultSet res = material.getMaterialBibliografico();
-            ResultSet res1 = material.getMaterialAudiovisual();
+            ResultSet resBibliografico = material.getMaterialBibliografico();
+            ResultSet resAudiovisual = material.getMaterialAudiovisual();
+            ResultSet resCopia = copia.getCopia();
             
-            request.getSession().setAttribute("bibliografico", res);
-            request.getSession().setAttribute("audiovisual", res1);
+            request.getSession().setAttribute("bibliografico", resBibliografico);
+            request.getSession().setAttribute("audiovisual", resAudiovisual);
+            request.getSession().setAttribute("copia", resCopia);
             
             response.sendRedirect("material_busqueda.jsp");
         } catch (Exception e) {

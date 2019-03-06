@@ -11,4 +11,14 @@ package logica;
  */
 public class MaterialAudiovisual extends Material{
     private String formatoMaterial; // n_formato
+
+    public String getFormatoMaterial() {
+        return formatoMaterial;
+    }
+
+    public void setFormatoMaterial(String formatoMaterial) {
+        this.formatoMaterial = formatoMaterial;
+    }
+    
+    
 }

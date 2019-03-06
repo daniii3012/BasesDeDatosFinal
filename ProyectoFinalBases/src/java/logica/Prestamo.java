@@ -17,5 +17,38 @@ public class Prestamo {
     private Date fechaReclamacion = new Date(); // f_reclamacion    
     private Date fechaDevolucionPrestamo = new Date(); // f_devolucion
     private Date fechaLimiteDevolucionPrestamo = new Date(); // f_limite_devolucion
+
+    public long getIdPrestamo() {
+        return idPrestamo;
+    }
+
+    public void setIdPrestamo(long idPrestamo) {
+        this.idPrestamo = idPrestamo;
+    }
+
+    public Date getFechaReclamacion() {
+        return fechaReclamacion;
+    }
+
+    public void setFechaReclamacion(Date fechaReclamacion) {
+        this.fechaReclamacion = fechaReclamacion;
+    }
+
+    public Date getFechaDevolucionPrestamo() {
+        return fechaDevolucionPrestamo;
+    }
+
+    public void setFechaDevolucionPrestamo(Date fechaDevolucionPrestamo) {
+        this.fechaDevolucionPrestamo = fechaDevolucionPrestamo;
+    }
+
+    public Date getFechaLimiteDevolucionPrestamo() {
+        return fechaLimiteDevolucionPrestamo;
+    }
+
+    public void setFechaLimiteDevolucionPrestamo(Date fechaLimiteDevolucionPrestamo) {
+        this.fechaLimiteDevolucionPrestamo = fechaLimiteDevolucionPrestamo;
+    }
+    
     
 }

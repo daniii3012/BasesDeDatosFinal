@@ -5,10 +5,26 @@
  */
 package bd;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author 
  */
 public class BDEstudiante {
+    BDConexion conexion;
     
+    public BDEstudiante(){
+        conexion = new BDConexion();
+    }
+    
+    public ResultSet getEstudianteById(int id) throws SQLException {
+        String strSQL = "SELECT * FROM estudiante WHERE k_estudiante = ?";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement("strSQL");
+        pstm.setInt(1, id);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
 }

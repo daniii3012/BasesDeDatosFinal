@@ -5,10 +5,31 @@
  */
 package bd;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author 
  */
 public class BDCopia {
+    
+    BDConexion conexion;
+    
+    public BDCopia(){
+        conexion = new BDConexion();
+    }
+    
+    public ResultSet getCopia() throws SQLException {
+        String strSQL = "SELECT * FROM copia";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+    
+    public String getMensaje() {
+        return conexion.getMensaje();
+    }
     
 }
