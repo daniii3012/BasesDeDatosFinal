@@ -1,5 +1,5 @@
-<%@page contentType="text/html"%> 
-<%@page pageEncoding="UTF-8"%> 
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
 
 <%--<%@page import=""%>
 <%@page import=""%>
@@ -93,13 +93,12 @@
 								<%--<%= nombreVariable.getString("k_id") %>--%> /Tipo de Material
 							</td>
 							<td class="reserva">
-								<input type="submit" value="Reservar" class="button">
-								<!--
-									Despues de reservar se redirige a inicio
-								-->
+								<!--<input type="submit" value="Reservar" class="button">-->
+								<input type="checkbox" id="" name="" value="">
 							</td>
 						</tr>
 					</table>
+					<input type="submit" value="Reservar" class="button">
 					<%--<% }%>--%>
 				</div>
 			</form>

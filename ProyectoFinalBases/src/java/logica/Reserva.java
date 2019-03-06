@@ -10,5 +10,12 @@ package logica;
  * @author Daniel
  */
 public class Reserva {
-    
+    private int idReserva; // k_reserva
+    private String fechaReserva; // f_reservacion
+    private String fechaCancelacionReserva; // f_cancelacion
+    private String estadoReserva; // i_estado_reserva
+    private int horasReserva; // q_nhoras
+    /*
+    Falta poner n_material
+    */
 }
