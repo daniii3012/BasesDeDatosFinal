@@ -13,10 +13,10 @@ import java.util.Date;
  * @author Daniel
  */
 public class Estudiante {
-    private int codigoEstudiante; // k_estudiante USAR: BigDecimal.valueOf(codigoEstudiante)
+    private long codigoEstudiante; // k_estudiante 
     private String nombreEstudiante; // n_nombre
     private String apellidoEstudiante; // n_apellido
-    private int idEstudiante; //q_identificacion USAR: BigDecimal.valueOf(idEstudiante)
+    private long idEstudiante; //q_identificacion 
     private String tipoIdEstudiante; // n_tipo_identificacion
     private Date fechaNacimientoEstudiante = new Date(); // f_nacimiento 
     private String generoEstudiante; // n_genero    

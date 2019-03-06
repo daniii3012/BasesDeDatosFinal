@@ -1,15 +1,15 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-<%--<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
 <%@page import="logica.Material"%>
 <%@page import="logica.MaterialAudiovisual"%>
 <%@page import="logica.MaterialBibliografico"%>
-<%@page import="java.sql.ResultSet"%>--%>
+<%@page import="java.sql.ResultSet"%>
 
 <!DOCTYPE html>
 
-<%--<% ResultSet material = (ResultSet)session.getAttribute("material"); %>--%>
+<% ResultSet material = (ResultSet)session.getAttribute("material"); %>
 
 <html>
 
@@ -82,17 +82,17 @@
 					</table>
 				</div>
 				<div class="divTabla" align="center">
-					<%--<% while (material.next()){ %>--%>
+					<% while (material.next()){ %>
 					<table class="busqueda">
 						<tr>
 							<td>
-								<%--<%= material.getString("n_titulo") %>--%>
+								<%= material.getString("n_titulo") %>
 							</td>
 							<td>
 								<%--<%= material.getString("") %>--%> /Autor
 							</td>
 							<td>
-								<%--<%= material.getString("f_publicacion") %>--%>
+								<%= material.getString("f_publicacion") %>
 							</td>
 							<td class="reserva">
 								<!--<input type="submit" value="Reservar" class="button">-->
@@ -100,8 +100,9 @@
 							</td>
 						</tr>
 					</table>
-					<input type="submit" value="Reservar" class="button">
-					<%--<% }%>--%>
+					
+					<% }%>
+                                        <input type="submit" value="Reservar" class="button">
 				</div>
 			</form>
 		</div>

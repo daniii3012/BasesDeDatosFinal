@@ -13,7 +13,7 @@ import java.util.Date;
  * @author 
  */
 public class Prestamo {
-    private int idPrestamo; // k_prestamo USAR: BigDecimal.valueOf(idPrestamo)
+    private long idPrestamo; // k_prestamo 
     private Date fechaReclamacion = new Date(); // f_reclamacion    
     private Date fechaDevolucionPrestamo = new Date(); // f_devolucion
     private Date fechaLimiteDevolucionPrestamo = new Date(); // f_limite_devolucion

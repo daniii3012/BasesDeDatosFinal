@@ -13,9 +13,9 @@ import java.util.Date;
  * @author 
  */
 public class Reserva {
-    private int idReserva; // k_reserva USAR: BigDecimal.valueOf(idReserva)
+    private long idReserva; // k_reserva 
     private Date fechaReserva = new Date(); // f_reservacion 
     private Date fechaCancelacionReserva = new Date(); // f_cancelacion 
     private String estadoReserva; // i_estado_reserva
-    private int horasReserva; // q_nhoras USAR: BigDecimal.valueOf(horasReserva)
+    private long horasReserva; // q_nhoras 
 }
