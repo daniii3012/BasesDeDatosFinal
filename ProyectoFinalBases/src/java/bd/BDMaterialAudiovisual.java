@@ -9,6 +9,6 @@ package bd;
  *
  * @author Daniel
  */
-public class BDMaterial {
+public class BDMaterialAudiovisual {
     
 }
