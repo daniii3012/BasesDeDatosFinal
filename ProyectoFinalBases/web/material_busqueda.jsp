@@ -52,13 +52,13 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="text" id="" placeholder="Titulo" disabled>
+								<input class="inputColor" type="text" id="" placeholder="Titulo" disabled>
 							</td>
 							<td>
-								<input type="text" id="" placeholder="Autor" disabled>
+								<input class="inputColor" type="text" id="" placeholder="Autor" disabled>
 							</td>
 							<td id="bibliografico">
-								<select id="" disabled>
+								<select class="selectColor" id="" disabled>
 									<option value="">Material Bibliogr�fico</option>
 									<option selected value="" id="">Libro</option>
 									<option value="" id="">Revista</option>
@@ -72,7 +72,7 @@
 								</select>
 							</td>
 							<td>
-								<input type="number" id="" placeholder="Codigo" required>
+								<input class="inputColor" type="number" id="" placeholder="Codigo" required>
 							</td>
 						</tr>
 					</table>

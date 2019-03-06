@@ -168,7 +168,7 @@ input {
 	-webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
+/* Fondo Blanco */
 input[type=text] {
   
   border-bottom: 2px solid rgb(172, 0, 0);
@@ -178,9 +178,22 @@ input[type=text]:focus {
 }
 
 input[type=text]:disabled {
-	background-color: rgb(241, 241, 241);
+	background-color: rgb(212, 212, 212);
 	border: 2px solid rgb(120, 25, 25);
 }
+/*Fondo Color*/
+.inputColor[type=text] {
+  border: 2px solid rgb(172, 0, 0);
+}
+.inputColor[type=text]:focus {
+	border: 2px solid rgb(255, 255, 255);
+}
+
+.inputColor[type=text]:disabled {
+	background-color: rgb(212, 212, 212);
+	border: 2px solid rgb(212, 212, 212);
+}
+/* Fondo Blanco */
 input[type=number] {
   
   border-bottom: 2px solid rgb(172, 0, 0);
@@ -190,9 +203,22 @@ input[type=number]:focus {
 }
 
 input[type=number]:disabled {
-	background-color: rgb(241, 241, 241);
+	background-color: rgb(212, 212, 212);
 	border: 2px solid rgb(120, 25, 25);
 }
+/* Fondo Color */
+.inputColor[type=number] {
+  border: 2px solid rgb(172, 0, 0);
+}
+.inputColor[type=number]:focus {
+	border: 2px solid rgb(255, 255, 255);
+}
+
+.inputColor[type=number]:disabled {
+	background-color: rgb(212, 212, 212);
+	border: 2px solid rgb(212, 212, 212);
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
@@ -216,7 +242,7 @@ select {
 	-webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
+/* Fondo Blanco */
 select:focus {
 	border: 2px solid rgb(172, 0, 0);
 }
@@ -224,6 +250,15 @@ select:focus {
 select:disabled {
 	background-color: rgb(241, 241, 241);
 	border: 2px solid rgb(120, 25, 25);
+}
+/* Fondo Color */
+.selectColor:focus {
+	border: 2px solid rgb(255, 255, 255);
+}
+
+.selectColor:disabled {
+	background-color: rgb(212, 212, 212);
+	border: 2px solid rgb(212, 212, 212);
 }
 
 select option {

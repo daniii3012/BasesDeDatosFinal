@@ -41,7 +41,7 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="number" id="" placeholder="Codigo" disabled>
+							<input class="inputColor" type="number" id="" placeholder="Codigo" disabled>
 						</td>
 					</tr>
 				</table>

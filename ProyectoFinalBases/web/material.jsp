@@ -61,7 +61,7 @@
 							</td>
 							<td id="bibliografico" style="display: none">
 								<select id="">
-									<option disabled selected value="">Material BibliogrÃ¡fico</option>
+									<option disabled selected value="">Material Bibliografico</option>
 									<option value="" id="">Libro</option>
 									<option value="" id="">Revista</option>
 								</select>
