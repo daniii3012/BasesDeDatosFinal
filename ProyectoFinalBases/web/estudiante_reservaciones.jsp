@@ -1,7 +1,9 @@
+<%@page contentType="text/html"%> 
+<%@page pageEncoding="UTF-8"%> 
+
 <%--<%@page import=""%>
 <%@page import=""%>
-<%@page import="java.sql.ResultSet"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>--%>
+<%@page import="java.sql.ResultSet"%>--%>
 
 <!DOCTYPE html>
 

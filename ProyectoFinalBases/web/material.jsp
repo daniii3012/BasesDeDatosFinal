@@ -1,3 +1,5 @@
+<%@page contentType="text/html"%> 
+<%@page pageEncoding="UTF-8"%> 
 
 <!DOCTYPE html>
 <html>
@@ -55,7 +57,7 @@
 							</td>
 							<td>
 								<input type="radio" name="tipo" id="tipoBibliografico"
-									onclick="tipoMaterial();">BibliogrÃ¡fico
+									onclick="tipoMaterial();">Bibliográfico
 								<input type="radio" name="tipo" id="tipoAudiovisual"
 									onclick="tipoMaterial();">Audiovisual
 							</td>
