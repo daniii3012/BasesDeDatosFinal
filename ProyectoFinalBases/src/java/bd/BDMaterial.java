@@ -5,7 +5,6 @@
  */
 package bd;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +23,13 @@ public class BDMaterial {
     
     public ResultSet getMaterialBibliografico() throws SQLException {
         String strSQL = "SELECT * FROM bibliografico";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+    
+    public ResultSet getMaterialAudiovisual() throws SQLException {
+        String strSQL = "SELECT * FROM audiovisual";
         PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         ResultSet res = pstm.executeQuery();
         return res;

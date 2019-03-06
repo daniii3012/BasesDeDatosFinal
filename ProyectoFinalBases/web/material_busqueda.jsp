@@ -9,7 +9,8 @@
 
 <!DOCTYPE html>
 
-<% ResultSet material = (ResultSet)session.getAttribute("material"); %>
+<% ResultSet materialBibliografico = (ResultSet)session.getAttribute("bibliografico"); %>
+<% ResultSet materialAudiovisual = (ResultSet)session.getAttribute("audiovisual"); %>
 
 <html>
 
@@ -107,25 +108,51 @@
 								
 							</td>
 						</tr>
-						<% while (material.next()){ %>
+						<% while (materialBibliografico.next()){ %>
 						<tr>
 							<td>
-								<%= material.getString("k_isbnissn") %>
+								<%= materialBibliografico.getString("k_isbnissn") %>
 							</td>
 							<td>
-								<%= material.getString("n_titulo") %>
+								<%= materialBibliografico.getString("n_titulo") %>
 							</td>
 							<td>
 								<%--<%= material.getString("") %>--%> /Autor
 							</td>
 							<td>
-								<%= material.getString("f_publicacion") %>
+								<%= materialBibliografico.getString("f_publicacion") %>
 							</td>
 							<td>
-								<%= material.getString("n_tipo") %>
+								<%= materialBibliografico.getString("n_tipo") %>
 							</td>
 							<td>
-								<%= material.getString("n_tema") %>
+								<%= materialBibliografico.getString("n_tema") %>
+							</td>
+							<td class="reserva">
+								<!--<input type="submit" value="Reservar" class="button">-->
+								<input type="checkbox" id="" name="" value="">
+							</td>
+						</tr>
+						<% }%>
+                                                <% while (materialAudiovisual.next()){ %>
+						<tr>
+							<td>
+								<%= materialAudiovisual.getString("k_isbnissn") %>
+							</td>
+							<td>
+								<%= materialAudiovisual.getString("n_titulo") %>
+							</td>
+							<td>
+								<%--<%= material.getString("") %>--%> /Autor
+							</td>
+							<td>
+								<%= materialAudiovisual.getString("f_publicacion") %>
+							</td>
+							<td>
+								<%= materialAudiovisual.getString("n_tipo") %>
+							</td>
+							<td>
+								<%= materialAudiovisual.getString("n_tema") %>
 							</td>
 							<td class="reserva">
 								<!--<input type="submit" value="Reservar" class="button">-->
