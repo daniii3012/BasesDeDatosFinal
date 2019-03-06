@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 package logica;
-
 import java.util.Date;
-//import java.sql.Date;
 
 /**
  *
  * @author 
  */
 public class Reserva {
+    Date fecha = new Date();
+    
     private long idReserva; // k_reserva 
-    private Date fechaReserva = new Date(); // f_reservacion 
-    private Date fechaCancelacionReserva = new Date(); // f_cancelacion 
+    private java.sql.Date fechaReserva = new java.sql.Date(fecha.getTime()); // f_reservacion 
+    private java.sql.Date fechaCancelacionReserva = new java.sql.Date(fecha.getTime()); // f_cancelacion 
     private String estadoReserva; // i_estado_reserva
 
     private long horasReserva; // q_nhoras 
@@ -33,7 +33,7 @@ public class Reserva {
     }
 
     public void setFechaReserva(Date fechaReserva) {
-        this.fechaReserva = fechaReserva;
+        this.fechaReserva = (java.sql.Date) fechaReserva;
     }
 
     public Date getFechaCancelacionReserva() {
@@ -41,7 +41,7 @@ public class Reserva {
     }
 
     public void setFechaCancelacionReserva(Date fechaCancelacionReserva) {
-        this.fechaCancelacionReserva = fechaCancelacionReserva;
+        this.fechaCancelacionReserva = (java.sql.Date) fechaCancelacionReserva;
     }
 
     public String getEstadoReserva() {

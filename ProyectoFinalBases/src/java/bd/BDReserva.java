@@ -5,9 +5,12 @@
  */
 package bd;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import logica.Estudiante;
 import logica.Material;
+import logica.Reserva;
 
 /**
  *
@@ -21,18 +24,22 @@ public class BDReserva {
         conexion = new BDConexion();
     }
     
-    public void agregarReserva(Material material){
+    public void agregarReserva(Estudiante estudiante){
         try {
-            String strSQL = "SELECT * FROM audiovisual";
-            PreparedStatement pstm = conexion.getConexion().prepareStatement("insert into personaje (n_nombre, n_habilidad, n_color) values (?,?,?)");
-            pstm.setString(1, personaje.getNombre());
-            pstm.setString(2, personaje.getHabilidad());
-            pstm.setString(3, personaje.getEspecie());
-
+            Reserva reserva = new Reserva();
+            String strSQL = "INSERT INTO reserva (f_reservacion, i_estado, k_estudiante) VALUES (?,?,?)";
+            PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+            pstm.setDate(1, (Date) reserva.getFechaReserva());
+            pstm.setString(2, "Activo");
+            pstm.setLong(3, estudiante.getIdEstudiante());
             pstm.executeUpdate();
 
         } catch (SQLException e) {
             System.out.println(e);
         }
+    }
+    
+    public String getMensaje() {
+        return conexion.getMensaje();
     }
 }

@@ -19,6 +19,15 @@
         <url-pattern>/BuscarReserva</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>AgregarReserva</servlet-name>
+        <servlet-class>servlet.AgregarReserva</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AgregarReserva</servlet-name>
+        <url-pattern>/AgregarReserva</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
