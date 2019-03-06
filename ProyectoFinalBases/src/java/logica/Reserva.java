@@ -17,8 +17,10 @@ public class Reserva {
     private Date fechaReserva = new Date(); // f_reservacion 
     private Date fechaCancelacionReserva = new Date(); // f_cancelacion 
     private String estadoReserva; // i_estado_reserva
+
     private long horasReserva; // q_nhoras 
 
+<<<<<<< HEAD
     public long getIdReserva() {
         return idReserva;
     }
@@ -59,4 +61,6 @@ public class Reserva {
         this.horasReserva = horasReserva;
     }
     
+=======
+>>>>>>> 2cefdde72ce43d838ec9c8eed9fbfe354ff33abe
 }

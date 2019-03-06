@@ -49,7 +49,6 @@ public class BuscarMaterial extends HttpServlet {
             request.getSession().setAttribute("copia", resCopia);
             
             response.sendRedirect("material_busqueda.jsp");
-            
         } catch (Exception e) {
             out.println("<html>");
             out.println("<head>");

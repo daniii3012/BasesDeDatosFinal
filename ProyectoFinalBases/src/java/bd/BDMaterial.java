@@ -44,7 +44,7 @@ public class BDMaterial {
         ResultSet res = pstm.executeQuery();
         return res;
     }
-    
+
     public ResultSet getMaterialAudiovisual() throws SQLException {
         String strSQL = "SELECT * FROM audiovisual";
         PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
@@ -56,4 +56,5 @@ public class BDMaterial {
         return conexion.getMensaje();
     }
     
+
 }
