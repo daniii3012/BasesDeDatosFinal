@@ -15,7 +15,7 @@ public class BDConexion {
     static String bd = "ProyectoFinalBiblioteca"; // Nombre de la base de datos
     static String login = "postgres";
     static String password = "9510"; //Debe reemplazarse por el password en su propia instalación
-    static String url = "jdbc:postgresql://localhost/:5432/"+bd;
+    static String url = "jdbc:postgresql://localhost:5432/"+bd;
     static String mensaje = "";
     
     Connection conexion = null;
