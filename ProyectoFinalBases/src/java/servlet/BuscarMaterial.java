@@ -41,20 +41,11 @@ public class BuscarMaterial extends HttpServlet {
             ResultSet res = material.getMaterialBibliografico();
             
             request.getSession().setAttribute("material", res);
+            
             response.sendRedirect("material_busqueda.jsp");
             
         } catch (Exception e) {
             
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Inicio</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Error at " + e.toString() + "</h1>");
-            out.println("<p>seguimiento: "+material.getMensaje()+"</p>");
-            out.println("</body>");
-            out.println("</html>");
-
         } finally {
             out.close();
         }
