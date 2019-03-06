@@ -38,7 +38,7 @@
 				<table>
 					<tr>
 						<td>
-							Codigo Estudiante
+							Código Estudiante
 						</td>
 					</tr>
 					<tr>

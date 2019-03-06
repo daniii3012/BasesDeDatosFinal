@@ -39,7 +39,7 @@
 						</tr>
 						<tr>
 							<td>
-								Codigo Estudiante
+								Código Estudiante
 							</td>
 						</tr>
 						<tr id="usuario">
