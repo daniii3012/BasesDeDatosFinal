@@ -1,11 +1,11 @@
-<!--<%@page import=""%>
+<%--<%@page import=""%>
 <%@page import=""%>
 <%@page import="java.sql.ResultSet"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>-->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>--%>
 
 <!DOCTYPE html>
 
-<!--<% ResultSet nombreVariable = (ResultSet)session.getAttribute("/*atributo*/"); %>-->
+<%--<% ResultSet nombreVariable = (ResultSet)session.getAttribute("/*atributo*/"); %>--%>
 
 <html>
 
@@ -59,7 +59,7 @@
 							</td>
 							<td id="bibliografico">
 								<select id="" disabled>
-									<option value="">Material Bibliográfico</option>
+									<option value="">Material Bibliogr�fico</option>
 									<option selected value="" id="">Libro</option>
 									<option value="" id="">Revista</option>
 								</select>
@@ -78,17 +78,17 @@
 					</table>
 				</div>
 				<div class="divTabla" align="center">
-					<!--<% while (nombreVariable.next()){ %>-->
+					<%--<% while (nombreVariable.next()){ %>--%>
 					<table class="busqueda">
 						<tr>
 							<td>
-								<!--<%= nombreVariable.getString("k_id") %>--> /Titulo
+								<%--<%= nombreVariable.getString("k_id") %>--%> /Titulo
 							</td>
 							<td>
-								<!--<%= nombreVariable.getString("k_id") %>--> /Autor
+								<%--<%= nombreVariable.getString("k_id") %>--%> /Autor
 							</td>
 							<td>
-								<!--<%= nombreVariable.getString("k_id") %>--> /Tipo de Material
+								<%--<%= nombreVariable.getString("k_id") %>--%> /Tipo de Material
 							</td>
 							<td class="reserva">
 								<input type="submit" value="Reservar" class="button">
@@ -98,7 +98,7 @@
 							</td>
 						</tr>
 					</table>
-					<!--<% }%>-->
+					<%--<% }%>--%>
 				</div>
 			</form>
 		</div>

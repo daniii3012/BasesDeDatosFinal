@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -54,13 +55,13 @@
 							</td>
 							<td>
 								<input type="radio" name="tipo" id="tipoBibliografico"
-									onclick="tipoMaterial();">Bibliográfico
+									onclick="tipoMaterial();">BibliogrÃ¡fico
 								<input type="radio" name="tipo" id="tipoAudiovisual"
 									onclick="tipoMaterial();">Audiovisual
 							</td>
 							<td id="bibliografico" style="display: none">
 								<select id="">
-									<option disabled selected value="">Material Bibliográfico</option>
+									<option disabled selected value="">Material BibliogrÃ¡fico</option>
 									<option value="" id="">Libro</option>
 									<option value="" id="">Revista</option>
 								</select>
