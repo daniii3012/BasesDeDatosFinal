@@ -9,6 +9,6 @@ package logica;
  *
  * @author Daniel
  */
-public class MaterialAudiovisual {
-    
+public class MaterialAudiovisual extends Material{
+    private String formatoMaterial; // n_formato
 }
