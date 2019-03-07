@@ -21,8 +21,8 @@ public class BDCopia {
         conexion = new BDConexion();
     }
     
-    public ResultSet getCopia() throws SQLException {
-        String strSQL = "SELECT * FROM copia";
+    public ResultSet getCopia(String idMaterial) throws SQLException {
+        String strSQL = "SELECT * FROM copia WHERE k_isbnissn = '" + idMaterial + "' ORDER BY k_copia";
         PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         ResultSet res = pstm.executeQuery();
         return res;

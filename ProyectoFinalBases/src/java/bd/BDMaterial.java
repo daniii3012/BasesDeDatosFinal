@@ -24,7 +24,7 @@ public class BDMaterial {
     
     public ResultSet getMaterialBibliograficoById(int id) throws SQLException {
         String strSQL = "SELECT * FROM bibliografico WHERE k_isbnissn = ?";
-        PreparedStatement pstm = conexion.getConexion().prepareStatement("strSQL");
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         pstm.setInt(1, id);
         ResultSet res = pstm.executeQuery();
         return res;
@@ -32,7 +32,7 @@ public class BDMaterial {
     
     public ResultSet getMaterialAudiovisualById(int id) throws SQLException {
         String strSQL = "SELECT * FROM audiovisual WHERE k_isbnissn = ?";
-        PreparedStatement pstm = conexion.getConexion().prepareStatement("strSQL");
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         pstm.setInt(1, id);
         ResultSet res = pstm.executeQuery();
         return res;

@@ -7,6 +7,7 @@ package bd;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import logica.Estudiante;
 import logica.Material;
@@ -24,14 +25,35 @@ public class BDReserva {
         conexion = new BDConexion();
     }
     
-    public void agregarReserva(Estudiante estudiante){
+    public void agregarReserva(int idEstudiante){
         try {
             Reserva reserva = new Reserva();
-            String strSQL = "INSERT INTO reserva (f_reservacion, i_estado, k_estudiante) VALUES (?,?,?)";
+            String strSQL = "INSERT INTO reserva (f_reservacion, i_estado_reserva, k_estudiante) VALUES (current_date,?,?)";
             PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
-            pstm.setDate(1, (Date) reserva.getFechaReserva());
-            pstm.setString(2, "Activo");
-            pstm.setLong(3, estudiante.getIdEstudiante());
+            pstm.setString(1, "Activo");
+            pstm.setInt(2, idEstudiante);
+            pstm.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+    
+    public ResultSet getReserva(int idEstudiante) throws SQLException {
+        String strSQL = "SELECT k_reserva FROM reserva WHERE k_estudiante = ?";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        pstm.setInt(1, idEstudiante);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+    
+    public void agregarReservaCopia(int idReserva, int idCopia){
+        try {
+            Reserva reserva = new Reserva();
+            String strSQL = "INSERT INTO reserva_copia (k_reserva, k_copia) VALUES (?,?)";
+            PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+            pstm.setInt(1, idReserva);
+            pstm.setInt(2, idCopia);
             pstm.executeUpdate();
 
         } catch (SQLException e) {

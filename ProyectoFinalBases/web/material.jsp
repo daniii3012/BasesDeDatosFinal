@@ -46,8 +46,11 @@
 								Autor
 							</td>
 							-->
-							<td>
+							<td colspan="2">
 								Tipo de Material
+							</td>
+							<td>
+								Codigo Estudiante
 							</td>
 						</tr>
 						<tr>
@@ -78,6 +81,9 @@
 									<option value="video" id="">Video</option>
 									<option value="pelicula" id="">Pelicula</option>
 								</select>
+							</td>
+							<td>
+								<input type="number" name="codigoEstudiante" id="codigoEstudiante" placeholder="12365478952" required>
 							</td>
 							<td>
 

@@ -37,8 +37,10 @@ public class BuscarMaterial extends HttpServlet {
 
         BDMaterial material = new BDMaterial();
         
-        try {
-            System.out.println(request.getParameter("titulo"));
+        try {            
+            String idEstudiante = request.getParameter("codigoEstudiante");
+            request.getSession().setAttribute("codigoEst", idEstudiante);
+            
             if (!request.getParameter("titulo").isEmpty()) {
                 
                 String tabla = "n_titulo";

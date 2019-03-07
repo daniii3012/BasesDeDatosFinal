@@ -84,8 +84,8 @@
 						</td>
 						-->
 						<td>
-							<input class="inputColor" type="number" id="codigoEstudiante" name="codigoEstudiante"
-								placeholder="Código">
+							<input class="inputColor" type="number" id="codigoEstudiante" name="codigoEstudiante" <c:out value="${codigoEst}"
+								placeholder="Código" disabled>
 						</td>
 					</tr>
 				</table>
@@ -126,10 +126,10 @@
 						</td>
 						<form action="AgregarReserva">
 							<td class="reserva">
-								<input type="hidden" name="idEstudiante" value="">
+								<input type="hidden" name="idEstudiante"  <c:out value="${codigoEst}">
 								<input type="hidden" name="idMaterial"
 									value="<%= materialBibliografico.getString("k_isbnissn") %>">
-								<input type="submit" value="Reservar" class="button" onclick="getCodigo();">
+								<input type="submit" value="Reservar" class="button">
 								<!--<input type="checkbox" id="reservarBibliografico" name="reservarBibliografico" value="<%= materialBibliografico.getString("k_isbnissn") %>">-->
 							</td>
 						</form>

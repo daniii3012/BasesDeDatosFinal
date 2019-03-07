@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import bd.BDCopia;
 import bd.BDEstudiante;
 import bd.BDMaterial;
 import bd.BDReserva;
@@ -40,21 +41,31 @@ public class AgregarReserva extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        Material materialBibliografico;
-        Estudiante estudiante;
         //DBContactos conDb = new DBContactos();
+        BDCopia copia = new BDCopia();
+        BDReserva reserva = new BDReserva();
+
         try {
-            materialBibliografico = new MaterialBibliografico();
-            estudiante = new Estudiante();
-            
-            
-            materialBibliografico.setIdMaterial(Long.parseLong(request.getParameter("idMaterial")));
-            estudiante.setIdEstudiante(Long.parseLong(request.getParameter("idEstudiante")));
+            String idMaterial = request.getParameter("idMaterial");
+            String idEstudiante = request.getParameter("idEstudiante");
 
-            
-            System.out.println(materialBibliografico.getIdMaterial());
-            System.out.println(estudiante.getIdEstudiante());
-
+            System.out.println(idMaterial);
+            System.out.println(idEstudiante);
+            System.out.println("Bandera");
+            ResultSet resCopia = copia.getCopia(idMaterial);
+            System.out.println("Bandera2");
+            reserva.agregarReserva(Integer.parseInt(idEstudiante));
+            System.out.println("Bandera3");
+            ResultSet resReserva = reserva.getReserva(Integer.parseInt(idEstudiante));
+            System.out.println("Bandera4");
+            reserva.agregarReservaCopia(resReserva.getInt("k_reserva"), resCopia.getInt("k_copia"));
+            System.out.println("Bandera5");
+            /*
+            while (resCopia.next()) {
+                
+                reserva.agregarReservaCopia(resReserva.getInt("k_reserva"), resCopia.getInt("k_copia"));
+            }
+            */
             response.sendRedirect("index.html");
         } catch (Exception e) {
 
@@ -64,7 +75,9 @@ public class AgregarReserva extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Error at " + e.toString() + "</h1>");
-            out.println("<p>Error: " + "</p>");
+            out.println("<p>Error: " +  copia.getMensaje() + "</p>");
+            out.println("<p>Error: " +  reserva.getMensaje() + "</p>");
+            out.println("<p>Error: " +  e.getMessage() + "</p>");
             out.println("</body>");
             out.println("</html>");
 
