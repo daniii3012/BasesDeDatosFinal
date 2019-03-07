@@ -78,7 +78,8 @@
 								</select>
 							</td>
 							<td>
-								<input class="inputColor" type="number" id="codigoEstudiante" name="codigoEstudiante" placeholder="Código" required>
+								<input class="inputColor" type="number" id="codigoEstudiante" name="codigoEstudiante"
+									placeholder="Código" required>
 							</td>
 						</tr>
 					</table>
@@ -118,6 +119,7 @@
 								<%= materialBibliografico.getString("n_tipo") %>
 							</td>
 							<td class="reserva">
+								<input type="hidden" name="item" value="<%= materialBibliografico.getString("k_isbnissn") %>">
 								<input type="submit" value="Reservar" class="button">
 								<!--<input type="checkbox" id="reservarBibliografico" name="reservarBibliografico" value="<%= materialBibliografico.getString("k_isbnissn") %>">-->
 							</td>
