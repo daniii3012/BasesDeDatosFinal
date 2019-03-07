@@ -25,55 +25,36 @@ public class BDReserva {
         conexion = new BDConexion();
     }
     
-    public void agregarReserva(double idReserva, double idEstudiante){
+    public void agregarReserva(int idEstudiante){
         try {
+            String strSQL = "INSERT INTO reserva (f_reservacion, i_estado_reserva, k_estudiante) VALUES (current_date,?,?)";
+            PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
             
-            String strSQL1 = "SELECT ? FROM reserva";
-            PreparedStatement pstm2 = conexion.getConexion().prepareStatement(strSQL1);
-            pstm2.setDouble(1, idEstudiante);
-            ResultSet res = pstm2.executeQuery();
+            pstm.setString(1, "Activo");
+            pstm.setInt(2, idEstudiante);
             
-            while (res.next()){
-                
-                if (res.getRow() == 0){
-                    String strSQL = "INSERT INTO reserva VALUES (?,current_date,current_date, ?, 8, ?)";
-                    PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);         
-                    pstm.setDouble(1, idReserva);
-                    pstm.setString(2, "A");
-                    pstm.setDouble(3, idEstudiante);
-                    pstm.executeUpdate();  
-                }
-            }
-            
+            pstm.executeUpdate();
+
         } catch (SQLException e) {
             System.out.println(e);
         }
     }
     
-    public double getReserva(Double idEstudiante) throws SQLException {
+    public ResultSet getReserva(int idEstudiante) throws SQLException {
         String strSQL = "SELECT k_reserva FROM reserva WHERE k_estudiante = ?";
         PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
-        pstm.setDouble(1, idEstudiante);
+        pstm.setInt(1, idEstudiante);
         ResultSet res = pstm.executeQuery();
-        //1597536842
-        double llave_reserva = 0;
-        while (res.next()){
-            if (res.getRow() == 1){
-                llave_reserva = res.getDouble("k_reserva");
-            }
-        }
-        return llave_reserva;
+        return res;
     }
     
-    public void agregarReservaCopia(double idReserva, double idCopia){
+    public void agregarReservaCopia(int idReserva, int idCopia){
         try {
-            //Reserva reserva = new Reserva();
-            System.out.println("Entre");
+            Reserva reserva = new Reserva();
             String strSQL = "INSERT INTO reserva_copia (k_reserva, k_copia) VALUES (?,?)";
             PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
-            
-            pstm.setDouble(1, idReserva);
-            pstm.setDouble(2, idCopia);
+            pstm.setInt(1, idReserva);
+            pstm.setInt(2, idCopia);
             pstm.executeUpdate();
 
         } catch (SQLException e) {

@@ -21,18 +21,11 @@ public class BDCopia {
         conexion = new BDConexion();
     }
     
-    public double getCopia(String idMaterial) throws SQLException {
+    public ResultSet getCopia(String idMaterial) throws SQLException {
         String strSQL = "SELECT * FROM copia WHERE k_isbnissn = '" + idMaterial + "' ORDER BY k_copia";
-        System.out.println(strSQL);
         PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         ResultSet res = pstm.executeQuery();
-        double copia1 = 0;
-        if (res.next()){
-            if (res.getRow() == 1){
-                copia1 = res.getDouble("k_copia");
-            }  
-        }
-        return copia1;
+        return res;
     }
     
     public String getMensaje() {
