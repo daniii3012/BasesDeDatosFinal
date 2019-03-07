@@ -62,8 +62,9 @@ public class AgregarReserva extends HttpServlet {
             ResultSet resEstudiante = estudianteBd.getEstudianteById(idEstudiante);
             
             if(resBibliografico.next()){
-                /*
+                
                 materialBibliografico.setIdMaterial(resBibliografico.getInt("k_isbnissn"));
+                /*
                 materialBibliografico.setTituloMaterial(resBibliografico.getString("n_titulo"));
                 materialBibliografico.setFechaPublicacionMaterial(resBibliografico.getDate("f_publicacion"));
                 materialBibliografico.setTipoMaterial(resBibliografico.getString("n_tipo"));
