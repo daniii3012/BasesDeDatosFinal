@@ -25,12 +25,13 @@ public class BDReserva {
         conexion = new BDConexion();
     }
     
-    public void agregarReserva(double idEstudiante){
+    public void agregarReserva(double idReserva, double idEstudiante){
         try {
-            String strSQL = "INSERT INTO reserva (f_reservacion, i_estado_reserva, k_estudiante) VALUES (current_date,?,?)";
+            String strSQL = "INSERT INTO reserva VALUES (?,current_date,current_date, ?, 8, ?)";
             PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);         
-            pstm.setString(1, "Activo");
-            pstm.setDouble(2, idEstudiante);
+            pstm.setDouble(1, idReserva);
+            pstm.setString(2, "A");
+            pstm.setDouble(3, idEstudiante);
             
             pstm.executeUpdate();
 
