@@ -33,16 +33,18 @@ public class BDReserva {
             pstm2.setDouble(1, idEstudiante);
             ResultSet res = pstm2.executeQuery();
             
-            if (res.next()){
+            while (res.next()){
                 
-                String strSQL = "INSERT INTO reserva VALUES (?,current_date,current_date, ?, 8, ?)";
-                PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);         
-                pstm.setDouble(1, idReserva);
-                pstm.setString(2, "A");
-                pstm.setDouble(3, idEstudiante);
-                pstm.executeUpdate();
-            } 
-
+                if (res.getRow() == 0){
+                    String strSQL = "INSERT INTO reserva VALUES (?,current_date,current_date, ?, 8, ?)";
+                    PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);         
+                    pstm.setDouble(1, idReserva);
+                    pstm.setString(2, "A");
+                    pstm.setDouble(3, idEstudiante);
+                    pstm.executeUpdate();  
+                }
+            }
+            
         } catch (SQLException e) {
             System.out.println(e);
         }
