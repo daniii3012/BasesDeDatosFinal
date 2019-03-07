@@ -49,24 +49,23 @@ public class AgregarReserva extends HttpServlet {
         try {
             String idMaterial = request.getParameter("idMaterial");
             String idEstudiante = request.getParameter("idEstudiante");
-
             System.out.println(idMaterial);
             System.out.println(idEstudiante);
             System.out.println("Bandera");
-            ResultSet resCopia = copia.getCopia(idMaterial);
             System.out.println("Bandera2");
-            reserva.agregarReserva(Integer.parseInt(idEstudiante));
+            reserva.agregarReserva(Double.valueOf(idEstudiante));
             System.out.println("Bandera3");
-            ResultSet resReserva = reserva.getReserva(Integer.parseInt(idEstudiante));
             System.out.println("Bandera4");
-            reserva.agregarReservaCopia(resReserva.getInt("k_reserva"), resCopia.getInt("k_copia"));
-            System.out.println("Bandera5");
-            /*
-            while (resCopia.next()) {
-                
-                reserva.agregarReservaCopia(resReserva.getInt("k_reserva"), resCopia.getInt("k_copia"));
+            double num_copia = copia.getCopia(idMaterial);
+            System.out.println(num_copia);
+            double k_r = reserva.getReserva(Double.valueOf(idEstudiante));
+            if (num_copia != 0 & k_r != 0){
+                reserva.agregarReservaCopia(k_r, num_copia);
+                System.out.println("CORRECTO");
+            } else {
+                System.out.println("Copia es cero o k_r es cero");
             }
-            */
+                
             response.sendRedirect("index.html");
         } catch (Exception e) {
 
