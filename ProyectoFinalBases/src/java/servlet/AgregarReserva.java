@@ -39,53 +39,21 @@ public class AgregarReserva extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        Material materialBibliografico;
-        MaterialAudiovisual materialAudiovisual;
-        Estudiante estudiante;
 
-        BDMaterial materialBd = new BDMaterial();
-        BDReserva reservaBd = new BDReserva();
-        BDEstudiante estudianteBd = new BDEstudiante();
+        Material materialBibliografico;
+        Estudiante estudiante;
         //DBContactos conDb = new DBContactos();
         try {
-            int idMaterialBibliografico = Integer.parseInt(request.getParameter("reservarBibliografico"));
-            int idMaterialAudiovisual = Integer.parseInt(request.getParameter("reservarAudiovisual"));
-            int idEstudiante = Integer.parseInt(request.getParameter("codigoEstudiante"));
-            
             materialBibliografico = new MaterialBibliografico();
-            materialAudiovisual = new MaterialAudiovisual();
             estudiante = new Estudiante();
             
-            ResultSet resBibliografico = materialBd.getMaterialBibliograficoById(idMaterialBibliografico);
-            ResultSet resAudiovisual = materialBd.getMaterialAudiovisualById(idMaterialAudiovisual);
-            ResultSet resEstudiante = estudianteBd.getEstudianteById(idEstudiante);
             
-            if(resBibliografico.next()){
-                
-                materialBibliografico.setIdMaterial(resBibliografico.getInt("k_isbnissn"));
-                /*
-                materialBibliografico.setTituloMaterial(resBibliografico.getString("n_titulo"));
-                materialBibliografico.setFechaPublicacionMaterial(resBibliografico.getDate("f_publicacion"));
-                materialBibliografico.setTipoMaterial(resBibliografico.getString("n_tipo"));
-                materialBibliografico.setTemaMaterial(resBibliografico.getString("n_tema"));
-                */
-                estudiante.setIdEstudiante(resEstudiante.getInt("k_estudiante"));
-                reservaBd.agregarReserva(estudiante);
-            }
+            materialBibliografico.setIdMaterial(Long.parseLong(request.getParameter("idMaterial")));
+            estudiante.setIdEstudiante(Long.parseLong(request.getParameter("codigoEstudiante")));
+
             
-            if(resAudiovisual.next()){
-                /*
-                materialAudiovisual.setIdMaterial(resAudiovisual.getInt("k_isbnissn"));
-                materialAudiovisual.setTituloMaterial(resAudiovisual.getString("n_titulo"));
-                materialAudiovisual.setFechaPublicacionMaterial(resAudiovisual.getDate("f_publicacion"));
-                materialAudiovisual.setTipoMaterial(resAudiovisual.getString("n_tipo"));
-                materialAudiovisual.setTemaMaterial(resAudiovisual.getString("n_tema"));
-                materialAudiovisual.setFormatoMaterial(resAudiovisual.getString("n_formato"));
-                */
-                estudiante.setIdEstudiante(resEstudiante.getInt("k_estudiante"));
-                reservaBd.agregarReserva(estudiante);
-            }
+            System.out.println(materialBibliografico.getIdMaterial());
+            System.out.println(estudiante.getIdEstudiante());
 
             response.sendRedirect("index.html");
         } catch (Exception e) {
@@ -96,7 +64,7 @@ public class AgregarReserva extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Error at " + e.toString() + "</h1>");
-            out.println("<p>Error: " + reservaBd.getMensaje() + "</p>");
+            out.println("<p>Error: " + "</p>");
             out.println("</body>");
             out.println("</html>");
 

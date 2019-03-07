@@ -65,7 +65,7 @@
 							</td>
 							<td id="bibliografico">
 								<select class="selectColor" id="" disabled>
-									<option value="">Material Bibliogr�fico</option>
+									<option value="">Material Bibliográfico</option>
 									<option selected value="" id="">Libro</option>
 									<option value="" id="">Revista</option>
 								</select>
@@ -119,7 +119,7 @@
 								<%= materialBibliografico.getString("n_tipo") %>
 							</td>
 							<td class="reserva">
-								<input type="hidden" name="item" value="<%= materialBibliografico.getString("k_isbnissn") %>">
+								<input type="hidden" name="idMaterial" id="idMaterial" value="<%= materialBibliografico.getString("k_isbnissn") %>">
 								<input type="submit" value="Reservar" class="button">
 								<!--<input type="checkbox" id="reservarBibliografico" name="reservarBibliografico" value="<%= materialBibliografico.getString("k_isbnissn") %>">-->
 							</td>
