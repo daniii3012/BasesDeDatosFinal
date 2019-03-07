@@ -44,17 +44,13 @@ public class BuscarMaterial extends HttpServlet {
         try {            
             String idEstudiante = request.getParameter("codigoEstudiante");
             request.getSession().setAttribute("codigoEst", idEstudiante);
-            Double idReserva = ((Math.random()*9)+1)*Math.pow(10, 5)+((Math.random()*9)+1)*Math.pow(10, 4)
+            Double idReserva = ((Math.random()*9)+1)*Math.pow(10, 4)
                     + ((Math.random()*9)+1)*Math.pow(10, 3) + ((Math.random()*9)+1)*Math.pow(10, 2)
                     + ((Math.random()*9)+1)*Math.pow(10, 1)+ ((Math.random()*9)+1)*Math.pow(10, 0);
             double cod_estudiante = Double.valueOf(idEstudiante);
             System.out.println(idReserva);
             System.out.println(idEstudiante);
-            System.out.println("Bandera");
-            System.out.println("Bandera2");
-            reserva.agregarReserva(idReserva, cod_estudiante);
-            System.out.println("Bandera3");
-            System.out.println("Bandera4");             
+            reserva.agregarReserva(idReserva, cod_estudiante);           
             
             if (!request.getParameter("titulo").isEmpty()) {
                 

@@ -27,13 +27,21 @@ public class BDReserva {
     
     public void agregarReserva(double idReserva, double idEstudiante){
         try {
-            String strSQL = "INSERT INTO reserva VALUES (?,current_date,current_date, ?, 8, ?)";
-            PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);         
-            pstm.setDouble(1, idReserva);
-            pstm.setString(2, "A");
-            pstm.setDouble(3, idEstudiante);
             
-            pstm.executeUpdate();
+            String strSQL1 = "SELECT ? FROM reserva";
+            PreparedStatement pstm2 = conexion.getConexion().prepareStatement(strSQL1);
+            pstm2.setDouble(1, idEstudiante);
+            ResultSet res = pstm2.executeQuery();
+            
+            if (res.next()){
+                
+                String strSQL = "INSERT INTO reserva VALUES (?,current_date,current_date, ?, 8, ?)";
+                PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);         
+                pstm.setDouble(1, idReserva);
+                pstm.setString(2, "A");
+                pstm.setDouble(3, idEstudiante);
+                pstm.executeUpdate();
+            } 
 
         } catch (SQLException e) {
             System.out.println(e);
