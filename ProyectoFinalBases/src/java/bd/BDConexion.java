@@ -12,7 +12,7 @@ import java.sql.*;
  * @author Daniel
  */
 public class BDConexion {
-    static String bd = "ProyectoFinalBiblioteca"; // Nombre de la base de datos
+    static String bd = "ProyectoFinalB"; // Nombre de la base de datos
     static String login = "postgres";
     static String password = "Brayan.29.Postgres"; //Debe reemplazarse por el password en su propia instalación
 
