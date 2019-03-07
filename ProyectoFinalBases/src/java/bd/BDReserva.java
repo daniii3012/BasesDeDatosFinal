@@ -27,11 +27,12 @@ public class BDReserva {
     
     public void agregarReserva(int idEstudiante){
         try {
-            Reserva reserva = new Reserva();
             String strSQL = "INSERT INTO reserva (f_reservacion, i_estado_reserva, k_estudiante) VALUES (current_date,?,?)";
             PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+            
             pstm.setString(1, "Activo");
             pstm.setInt(2, idEstudiante);
+            
             pstm.executeUpdate();
 
         } catch (SQLException e) {
