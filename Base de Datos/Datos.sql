@@ -210,3 +210,5 @@ INSERT INTO estudiante VALUES  (1895400785, 'Paola', 'Hernandez', 1289634578, 'C
 INSERT INTO estudiante VALUES  (1072868945, 'Pedro', 'Jaramillo', 1472583690, 'TI', '30/10/1999', 'M', 'I');
 INSERT INTO estudiante VALUES  (1080456820, 'Vicky', 'Buitrago', 1018964735, 'TI', '30/03/1997', 'F', 'I');
 INSERT INTO estudiante VALUES  (1288144695, 'Miguel', 'Castaño', 1026875340, 'CC', '27/08/1994', 'M', 'A');
+
+INSERT INTO estudiante VALUES (2017102049, 'Daniel', 'Montiel', 1013693586, 'CC', '30-12-1999', 'M', 'A');

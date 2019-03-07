@@ -27,4 +27,8 @@ public class BDEstudiante {
         ResultSet res = pstm.executeQuery();
         return res;
     }
+    
+    public String getMensaje() {
+        return conexion.getMensaje();
+    }
 }

@@ -7,6 +7,7 @@ package servlet;
 
 import bd.BDCopia;
 import bd.BDMaterial;
+import bd.BDReserva;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -37,10 +38,20 @@ public class BuscarMaterial extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         BDMaterial material = new BDMaterial();
+        BDReserva reserva = new BDReserva();
 
         
-        try {
-            System.out.println(request.getParameter("titulo"));
+        try {            
+            String idEstudiante = request.getParameter("codigoEstudiante");
+            request.getSession().setAttribute("codigoEst", idEstudiante);
+            Double idReserva = ((Math.random()*9)+1)*Math.pow(10, 4)
+                    + ((Math.random()*9)+1)*Math.pow(10, 3) + ((Math.random()*9)+1)*Math.pow(10, 2)
+                    + ((Math.random()*9)+1)*Math.pow(10, 1)+ ((Math.random()*9)+1)*Math.pow(10, 0);
+            double cod_estudiante = Double.valueOf(idEstudiante);
+            System.out.println(idReserva);
+            System.out.println(idEstudiante);
+            reserva.agregarReserva(idReserva, cod_estudiante);           
+            
             if (!request.getParameter("titulo").isEmpty()) {
                 
                 String tabla = "n_titulo";

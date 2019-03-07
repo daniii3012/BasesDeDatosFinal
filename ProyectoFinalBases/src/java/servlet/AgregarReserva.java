@@ -5,20 +5,14 @@
  */
 package servlet;
 
-import bd.BDEstudiante;
-import bd.BDMaterial;
+import bd.BDCopia;
 import bd.BDReserva;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import logica.Estudiante;
-import logica.Material;
-import logica.MaterialAudiovisual;
-import logica.MaterialBibliografico;
 
 /**
  *
@@ -41,22 +35,25 @@ public class AgregarReserva extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        Material materialBibliografico;
-        Estudiante estudiante;
         //DBContactos conDb = new DBContactos();
+        BDCopia copia = new BDCopia();
+        BDReserva reserva = new BDReserva();
+
         try {
-            materialBibliografico = new MaterialBibliografico();
-            estudiante = new Estudiante();
-            
-            
-            materialBibliografico.setIdMaterial(Long.parseLong(request.getParameter("idMaterial")));
-            estudiante.setIdEstudiante(Long.parseLong(request.getParameter("idEstudiante")));
-
-            
-            System.out.println(materialBibliografico.getIdMaterial());
-            System.out.println(estudiante.getIdEstudiante());
-
-            response.sendRedirect("index.html");
+            String idMaterial = request.getParameter("idMaterial");
+            String idEstudiante = request.getParameter("idEstudiante");
+            double num_copia = copia.getCopia(idMaterial);
+            System.out.println(num_copia);
+            double k_r = reserva.getReserva(Double.valueOf(idEstudiante));
+            System.out.println(k_r);
+            if (num_copia != 0 & k_r != 0){
+                reserva.agregarReservaCopia(k_r, num_copia);
+                System.out.println("CORRECTO");
+            } else {
+                System.out.println("Copia es cero o k_r es cero");
+            }
+                
+            response.sendRedirect("material.jsp");
         } catch (Exception e) {
 
             out.println("<html>");
@@ -65,7 +62,9 @@ public class AgregarReserva extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Error at " + e.toString() + "</h1>");
-            out.println("<p>Error: " + "</p>");
+            out.println("<p>Error: " +  copia.getMensaje() + "</p>");
+            out.println("<p>Error: " +  reserva.getMensaje() + "</p>");
+            out.println("<p>Error: " +  e.getMessage() + "</p>");
             out.println("</body>");
             out.println("</html>");
 

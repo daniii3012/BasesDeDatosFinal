@@ -14,7 +14,7 @@ import java.sql.*;
 public class BDConexion {
     static String bd = "ProyectoFinalBibliotecaV2"; // Nombre de la base de datos
     static String login = "postgres";
-    static String password = "Brayan.29.Postgres"; //Debe reemplazarse por el password en su propia instalación
+    static String password = "9510"; //Debe reemplazarse por el password en su propia instalación
 
     static String url = "jdbc:postgresql://localhost:5432/"+bd;
 
