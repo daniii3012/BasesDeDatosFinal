@@ -39,7 +39,6 @@ public class AgregarReserva extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
         Material materialBibliografico;
         Estudiante estudiante;
         //DBContactos conDb = new DBContactos();

@@ -38,7 +38,7 @@
 	</div>
 	<div class="divContainer" align="center">
 		<div class="divContent">
-			<form action="AgregarReserva">
+			<form action="ConfirmarReserva" id="Confirma">
 				<div class="divTablaColor" align="center">
 
 					<table>
@@ -79,7 +79,7 @@
 							</td>
 							<td>
 								<input class="inputColor" type="number" id="codigoEstudiante" name="codigoEstudiante"
-									placeholder="Código" required>
+									placeholder="Código">
 							</td>
 						</tr>
 					</table>
@@ -105,6 +105,7 @@
 							</td>
 						</tr>
 						<% while (materialBibliografico.next()){ %>
+                                                <form action="AgregarReserva">
 						<tr>
 							<td>
 								<%= materialBibliografico.getString("k_isbnissn") %>
@@ -124,7 +125,9 @@
 								<!--<input type="checkbox" id="reservarBibliografico" name="reservarBibliografico" value="<%= materialBibliografico.getString("k_isbnissn") %>">-->
 							</td>
 						</tr>
+                                                </form>
 						<% }%>
+                                                <input type="submit" value="Confirmar reserva" class="button">
 						<%--<% while (materialAudiovisual.next()){ %>
 						<tr>
 							<td>
