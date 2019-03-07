@@ -44,7 +44,7 @@
 						</tr>
 						<tr id="usuario">
 							<td>
-								<input type="number" id="codigo" placeholder="Codigo" required>
+								<input type="number" id="codigo" name="codigo" placeholder="Codigo" required>
 							</td>
 							<td>
 								<!--

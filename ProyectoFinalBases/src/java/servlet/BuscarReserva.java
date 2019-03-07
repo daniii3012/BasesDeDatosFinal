@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import bd.BDReserva;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -32,7 +33,22 @@ public class BuscarReserva extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+
+        BDReserva reserva = new BDReserva();
+
         try {
+            
+            String idEstudiante = request.getParameter("codigo");
+            request.getSession().setAttribute("codigoEst", idEstudiante);
+            
+            ResultSet resReserva = reserva.getReservaPosix(idEstudiante);
+            request.getSession().setAttribute("reserva", resReserva);
+            
+            double idReserva = reserva.getReserva(Double.valueOf(idEstudiante));
+            
+            ResultSet resReservaCopia = reserva.getReservaCopiaPosix(idReserva);
+            request.getSession().setAttribute("reservaCopia", resReservaCopia);
+            
             response.sendRedirect("estudiante_reservaciones.jsp");
         } catch (Exception e) {
 
