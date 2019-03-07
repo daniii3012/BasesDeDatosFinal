@@ -52,7 +52,7 @@
 						</tr>
 						<tr>
 							<td>
-								<input type="text" id="titulo" placeholder="Titulo">
+								<input type="text" id="titulo" name="titulo" placeholder="Titulo" value="">
 							</td>
 							<!--
 							<td>
@@ -66,17 +66,17 @@
 									onclick="tipoMaterial();">Audiovisual
 							</td>
 							<td id="bibliografico" style="display: none">
-								<select id="">
+								<select id="tipoBibliograficoSelect" name="tipoBibliograficoSelect">
 									<option disabled selected value="">Material Bibliografico</option>
-									<option value="libro" id="tipoBibliografico">Libro</option>
-									<option value="revista" id="tipoBibliografico">Revista</option>
+									<option value="libro" id="">Libro</option>
+									<option value="revista" id="">Revista</option>
 								</select>
 							</td>
 							<td id="audiovisual" style="display: none">
-								<select id="">
+								<select id="tipoAudiovisualSelect" name="tipoAudiovisualSelect">
 									<option disabled selected value="">Material Audiovisual</option>
-									<option value="video" id="tipoAudiovisual">Video</option>
-									<option value="pelicula" id="tipoAudiovisual">Pelicula</option>
+									<option value="video" id="">Video</option>
+									<option value="pelicula" id="">Pelicula</option>
 								</select>
 							</td>
 							<td>

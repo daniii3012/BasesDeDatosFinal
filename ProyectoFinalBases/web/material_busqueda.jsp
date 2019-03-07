@@ -43,22 +43,27 @@
 
 				<table>
 					<tr>
+						<!--
 						<td>
 							Titulo
 						</td>
+						
 						<td>
 							Autor
 						</td>
+						
 						<td>
 							Tipo de Material
 						</td>
+						-->
 						<td>
 							Codigo Estudiante
 						</td>
 					</tr>
 					<tr>
+						<!--
 						<td>
-							<input class="inputColor" type="text" id="" placeholder="Titulo" disabled>
+							<input class="inputColor" type="text" id="" <c:out value="${titulo}" disabled>
 						</td>
 						<td>
 							<input class="inputColor" type="text" id="" placeholder="Autor" disabled>
@@ -77,9 +82,10 @@
 								<option selected value="" id="">Pelicula</option>
 							</select>
 						</td>
+						-->
 						<td>
 							<input class="inputColor" type="number" id="codigoEstudiante" name="codigoEstudiante"
-								placeholder="Código" required>
+								placeholder="Código">
 						</td>
 					</tr>
 				</table>
