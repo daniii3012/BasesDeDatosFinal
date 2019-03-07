@@ -36,18 +36,18 @@ public class AgregarReserva extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        Material materialBibliografico;
-        MaterialAudiovisual materialAudiovisual;
-        Estudiante estudiante;
+        throws ServletException, IOException {
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = response.getWriter();
 
-        BDMaterial materialBd = new BDMaterial();
-        BDReserva reservaBd = new BDReserva();
-        BDEstudiante estudianteBd = new BDEstudiante();
-        //DBContactos conDb = new DBContactos();
+            Material materialBibliografico;
+            MaterialAudiovisual materialAudiovisual;
+            Estudiante estudiante;
+
+            BDMaterial materialBd = new BDMaterial();
+            BDReserva reservaBd = new BDReserva();
+            BDEstudiante estudianteBd = new BDEstudiante();
+            //DBContactos conDb = new DBContactos();
         try {
             int idMaterialBibliografico = Integer.parseInt(request.getParameter("reservarBibliografico"));
             int idMaterialAudiovisual = Integer.parseInt(request.getParameter("reservarAudiovisual"));
