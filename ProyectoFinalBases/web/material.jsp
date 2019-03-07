@@ -1,5 +1,5 @@
-<%@page contentType="text/html"%> 
-<%@page pageEncoding="UTF-8"%> 
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@
 	<div class="divContainer" align="center">
 		<div class="divContent">
 			<div class="divTabla" align="center">
-				<form action="BuscarMaterial">
+				<form action="BuscarMaterial" method="POST">
 					<table>
 						<tr>
 							<td>
@@ -41,20 +41,24 @@
 							<td>
 								Titulo
 							</td>
+							<!--
 							<td>
 								Autor
 							</td>
+							-->
 							<td>
 								Tipo de Material
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<input type="text" id="" placeholder="Titulo">
+								<input type="text" id="titulo" name="titulo" placeholder="Titulo" value="">
 							</td>
+							<!--
 							<td>
 								<input type="text" id="" placeholder="Autor">
 							</td>
+							-->
 							<td>
 								<input type="radio" name="tipo" id="tipoBibliografico"
 									onclick="tipoMaterial();">Bibliográfico
@@ -62,17 +66,17 @@
 									onclick="tipoMaterial();">Audiovisual
 							</td>
 							<td id="bibliografico" style="display: none">
-								<select id="">
+								<select id="tipoBibliograficoSelect" name="tipoBibliograficoSelect">
 									<option disabled selected value="">Material Bibliografico</option>
-									<option value="" id="">Libro</option>
-									<option value="" id="">Revista</option>
+									<option value="libro" id="">Libro</option>
+									<option value="revista" id="">Revista</option>
 								</select>
 							</td>
 							<td id="audiovisual" style="display: none">
-								<select id="">
+								<select id="tipoAudiovisualSelect" name="tipoAudiovisualSelect">
 									<option disabled selected value="">Material Audiovisual</option>
-									<option value="" id="">Video</option>
-									<option value="" id="">Pelicula</option>
+									<option value="video" id="">Video</option>
+									<option value="pelicula" id="">Pelicula</option>
 								</select>
 							</td>
 							<td>

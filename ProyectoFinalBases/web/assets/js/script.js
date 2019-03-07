@@ -18,6 +18,11 @@ function validateDate() {
 	}
 }
 */
+function getCodigo() {
+	var codigo = document.getElementById("codigoEstudiante").value;
+	document.getElementById("idEstudiante").value = codigo;
+}
+
 function randomBanner() {
 	var imgCount = 3;
 	var dir = 'images/';

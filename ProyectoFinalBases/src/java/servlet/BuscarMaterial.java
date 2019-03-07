@@ -31,32 +31,65 @@ public class BuscarMaterial extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-            response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
 
-            BDMaterial material = new BDMaterial();
-            BDCopia copia = new BDCopia();
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        BDMaterial material = new BDMaterial();
+
         
         try {
-            
-            ResultSet resBibliografico = material.getMaterialBibliografico();
-            ResultSet resAudiovisual = material.getMaterialAudiovisual();
-            ResultSet resCopia = copia.getCopia();
-            
-            request.getSession().setAttribute("bibliografico", resBibliografico);
-            request.getSession().setAttribute("audiovisual", resAudiovisual);
-            request.getSession().setAttribute("copia", resCopia);
+            System.out.println(request.getParameter("titulo"));
+            if (!request.getParameter("titulo").isEmpty()) {
+                
+                String tabla = "n_titulo";
+                String titulo = request.getParameter("titulo");
+                
+                ResultSet resBibliografico = material.getMaterialBibliograficoPosix(tabla, titulo);
+                ResultSet resAudiovisual = material.getMaterialAudiovisualPosix(tabla, titulo);
+                
+                request.getSession().setAttribute("bibliografico", resBibliografico);
+                request.getSession().setAttribute("audiovisual", resAudiovisual);
+                
+            } else if (request.getParameter("tipoBibliograficoSelect") != null) {
+                
+                String tabla = "n_tipo";
+                String titulo = request.getParameter("tipoBibliograficoSelect");
+                
+                ResultSet resBibliografico = material.getMaterialBibliograficoPosix(tabla, titulo);
+                
+                request.getSession().setAttribute("bibliografico", resBibliografico);
+                
+            } else if (request.getParameter("tipoAudiovisualSelect") != null) {
+                
+                String tabla = "n_tipo";
+                String titulo = request.getParameter("tipoAudiovisualSelect");
+                
+                ResultSet resAudiovisual = material.getMaterialAudiovisualPosix(tabla, titulo);
+                
+                request.getSession().setAttribute("audiovisual", resAudiovisual);
+                
+            } else {
+                
+                ResultSet resBibliografico = material.getMaterialBibliografico();
+                ResultSet resAudiovisual = material.getMaterialAudiovisual();
+                
+                request.getSession().setAttribute("bibliografico", resBibliografico);
+                request.getSession().setAttribute("audiovisual", resAudiovisual);
+                
+            }
             
             response.sendRedirect("material_busqueda.jsp");
+            
         } catch (Exception e) {
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Inicio</title>");  
+            out.println("<title>Servlet Inicio</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Error at " + e.toString() + "</h1>");
-            out.println("<p>Error: "+material.getMensaje()+"</p>");
+            out.println("<p>Error: " + material.getMensaje() + "</p>");
             out.println("</body>");
             out.println("</html>");
         } finally {
