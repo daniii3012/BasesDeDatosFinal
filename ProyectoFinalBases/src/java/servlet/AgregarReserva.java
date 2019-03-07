@@ -45,6 +45,7 @@ public class AgregarReserva extends HttpServlet {
             double num_copia = copia.getCopia(idMaterial);
             System.out.println(num_copia);
             double k_r = reserva.getReserva(Double.valueOf(idEstudiante));
+            System.out.println(k_r);
             if (num_copia != 0 & k_r != 0){
                 reserva.agregarReservaCopia(k_r, num_copia);
                 System.out.println("CORRECTO");
