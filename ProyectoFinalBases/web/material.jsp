@@ -28,7 +28,7 @@
 	<div class="divContainer" align="center">
 		<div class="divContent">
 			<div class="divTabla" align="center">
-				<form action="BuscarMaterial">
+				<form action="BuscarMaterial" method="POST">
 					<table>
 						<tr>
 							<td>
