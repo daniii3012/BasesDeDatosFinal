@@ -31,11 +31,13 @@ public class BuscarMaterial extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
         BDMaterial material = new BDMaterial();
+
         
         try {
             System.out.println(request.getParameter("titulo"));
