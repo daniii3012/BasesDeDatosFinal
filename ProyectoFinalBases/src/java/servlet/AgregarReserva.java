@@ -49,7 +49,7 @@ public class AgregarReserva extends HttpServlet {
             
             
             materialBibliografico.setIdMaterial(Long.parseLong(request.getParameter("idMaterial")));
-            estudiante.setIdEstudiante(Long.parseLong(request.getParameter("codigoEstudiante")));
+            estudiante.setIdEstudiante(Long.parseLong(request.getParameter("idEstudiante")));
 
             
             System.out.println(materialBibliografico.getIdMaterial());

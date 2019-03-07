@@ -1,5 +1,5 @@
-<%@page contentType="text/html"%> 
-<%@page pageEncoding="UTF-8"%> 
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -41,20 +41,24 @@
 							<td>
 								Titulo
 							</td>
+							<!--
 							<td>
 								Autor
 							</td>
+							-->
 							<td>
 								Tipo de Material
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<input type="text" id="" placeholder="Titulo">
+								<input type="text" id="titulo" placeholder="Titulo">
 							</td>
+							<!--
 							<td>
 								<input type="text" id="" placeholder="Autor">
 							</td>
+							-->
 							<td>
 								<input type="radio" name="tipo" id="tipoBibliografico"
 									onclick="tipoMaterial();">Bibliográfico
@@ -64,15 +68,15 @@
 							<td id="bibliografico" style="display: none">
 								<select id="">
 									<option disabled selected value="">Material Bibliografico</option>
-									<option value="" id="">Libro</option>
-									<option value="" id="">Revista</option>
+									<option value="libro" id="tipoBibliografico">Libro</option>
+									<option value="revista" id="tipoBibliografico">Revista</option>
 								</select>
 							</td>
 							<td id="audiovisual" style="display: none">
 								<select id="">
 									<option disabled selected value="">Material Audiovisual</option>
-									<option value="" id="">Video</option>
-									<option value="" id="">Pelicula</option>
+									<option value="video" id="tipoAudiovisual">Video</option>
+									<option value="pelicula" id="tipoAudiovisual">Pelicula</option>
 								</select>
 							</td>
 							<td>

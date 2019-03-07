@@ -44,9 +44,23 @@ public class BDMaterial {
         ResultSet res = pstm.executeQuery();
         return res;
     }
+    
+    public ResultSet getMaterialBibliograficoPosix(String tabla, String input) throws SQLException {
+        String strSQL = "SELECT * FROM bibliografico WHERE " + tabla + " ~* " + input;
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
 
     public ResultSet getMaterialAudiovisual() throws SQLException {
         String strSQL = "SELECT * FROM audiovisual";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+    
+    public ResultSet getMaterialAudiovisualPosix(String tabla, String input) throws SQLException {
+        String strSQL = "SELECT * FROM audiovisual WHERE " + tabla + " ~* " + input;
         PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
         ResultSet res = pstm.executeQuery();
         return res;

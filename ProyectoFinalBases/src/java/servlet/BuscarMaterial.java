@@ -40,6 +40,16 @@ public class BuscarMaterial extends HttpServlet {
         
         try {
             
+            if(request.getParameter("titulo") != null){
+                String tabla = "n_titulo";
+                String titulo = request.getParameter("titulo");
+                ResultSet resBibliografico = material.getMaterialBibliograficoPosix(tabla, titulo);
+            } else if(request.getParameter("tipoBibliografico") != null) {
+                String tabla = "n_titulo";
+                String titulo = request.getParameter("titulo");
+                ResultSet resBibliografico = material.getMaterialAudiovisualPosix(tabla, titulo);
+            }
+            
             ResultSet resBibliografico = material.getMaterialBibliografico();
             ResultSet resAudiovisual = material.getMaterialAudiovisual();
             ResultSet resCopia = copia.getCopia();
