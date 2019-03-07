@@ -50,6 +50,7 @@ public class AgregarReserva extends HttpServlet {
             //DBContactos conDb = new DBContactos();
         try {
             int idMaterialBibliografico = Integer.parseInt(request.getParameter("reservarBibliografico"));
+            System.out.println(request.getParameter("reservarBibliografico"));
             int idMaterialAudiovisual = Integer.parseInt(request.getParameter("reservarAudiovisual"));
             int idEstudiante = Integer.parseInt(request.getParameter("codigoEstudiante"));
             
