@@ -127,7 +127,7 @@
 						</tr>
                                                 </form>
 						<% }%>
-                                                <input type="submit" value="Confirmar reserva" class="button">
+                                                <input type="submit" value="Confirmar reserva" class="button" id="Confirma">
 						<%--<% while (materialAudiovisual.next()){ %>
 						<tr>
 							<td>
