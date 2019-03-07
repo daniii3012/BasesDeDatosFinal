@@ -23,3 +23,19 @@ INSERT INTO bibliografico VALUES (9788491870586, 'Leal', '22-10-2013', 'Libro', 
 INSERT INTO bibliografico VALUES (00279358, 'National Geographic', '01-10-1888', 'Revista', 'National Geographic Magazine');
 INSERT INTO bibliografico VALUES (00280836, 'Nature', '04-09-1869', 'Revista', 'Nature Magazine');
 INSERT INTO bibliografico VALUES (00368075, 'Science', '01-03-1880', 'Revista', 'Science Magazine');
+
+INSERT INTO estudiante VALUES  (1597536842, 'Nicolas', 'Ladino', 1032959647, 'CC', '05/09/1996', 'M', 'A');
+INSERT INTO estudiante VALUES  (1472583695, 'Luigi', 'Rojas', 159357, 'CE', '28/02/1997', 'M', 'A');
+INSERT INTO estudiante VALUES  (1237894562, 'Juan', 'Guerrero', 9911077686, 'TI', '07/11/1999', 'M', 'I');
+INSERT INTO estudiante VALUES  (1283274968, 'Laura', 'Castillo', 1026874369, 'CC', '15/03/1990', 'F', 'I');
+INSERT INTO estudiante VALUES  (1673925864, 'Jose', 'Perez', 178932, 'CE', '16/04/1997', 'M', 'A');
+INSERT INTO estudiante VALUES  (1973846529, 'Maria', 'Romero', 156487, 'CE', '17/03/1998', 'F', 'I');
+INSERT INTO estudiante VALUES  (1759823465, 'Jessica', 'Pinto', 9809055348, 'TI', '05/09/1998', 'F', 'A');
+INSERT INTO estudiante VALUES  (1332896574, 'Daniela', 'Guitierrez', 1000924878, 'CC', '12/10/1994', 'F', 'A');
+INSERT INTO estudiante VALUES  (1072768945, 'Frank', 'Leon', 1025739850, 'CC', '06/03/2000', 'M', 'I');
+INSERT INTO estudiante VALUES  (1180456820, 'Ben', 'Naranjo', 1097683249, 'CC', '04/08/1997', 'M', 'A');
+INSERT INTO estudiante VALUES  (1740863208, 'Michael', 'Corleone', 1038794024, 'TI', '02/01/1995', 'M', 'A');
+INSERT INTO estudiante VALUES  (1895400785, 'Paola', 'Hernandez', 1289634578, 'CC', '01/06/1992', 'F', 'I');
+INSERT INTO estudiante VALUES  (1072868945, 'Pedro', 'Jaramillo', 1472583690, 'TI', '30/10/1999', 'M', 'I');
+INSERT INTO estudiante VALUES  (1080456820, 'Vicky', 'Buitrago', 1018964735, 'TI', '30/03/1997', 'F', 'I');
+INSERT INTO estudiante VALUES  (1288144695, 'Miguel', 'Castaño', 1026875340, 'CC', '27/08/1994', 'M', 'A');
