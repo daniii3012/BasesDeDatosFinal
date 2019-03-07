@@ -1,8 +1,6 @@
-/*INSERT INTO bibliografico VALUES (1234567890123, 'Ejemplo', '06-03-2019', 'Libro', 'Este es un ejemplo');
-INSERT INTO bibliografico VALUES (1234567890124, 'Ejemplo1', '05-03-2019', 'Libro', 'Este es un ejemplo');
-INSERT INTO bibliografico VALUES (1234567890125, 'Ejemplo2', '12-06-1999', 'Revista', 'Este es un ejemplo de revista');
-
-INSERT INTO audiovisual VALUES (9876543210123, 'Ejemplo', '06-03-2019', 'Video', 'Este es un ejemplo de video');*/
+/*
+Datos Materiales
+*/
 
 INSERT INTO bibliografico VALUES (9788478884452, 'Harry Potter 1', '26-06-1997', 'Libro', 'Harry Potter y la piedra filosofal');
 INSERT INTO bibliografico VALUES (9788478884957, 'Harry Potter 2', '02-07-1998', 'Libro', 'Harry Potter y la cámara secreta');
@@ -23,6 +21,16 @@ INSERT INTO bibliografico VALUES (9788491870586, 'Leal', '22-10-2013', 'Libro', 
 INSERT INTO bibliografico VALUES (00279358, 'National Geographic', '01-10-1888', 'Revista', 'National Geographic Magazine');
 INSERT INTO bibliografico VALUES (00280836, 'Nature', '04-09-1869', 'Revista', 'Nature Magazine');
 INSERT INTO bibliografico VALUES (00368075, 'Science', '01-03-1880', 'Revista', 'Science Magazine');
+
+/*
+Datos Copias
+*/
+
+INSERT
+
+/*
+Datos Estudiantes
+*/
 
 INSERT INTO estudiante VALUES  (1597536842, 'Nicolas', 'Ladino', 1032959647, 'CC', '05/09/1996', 'M', 'A');
 INSERT INTO estudiante VALUES  (1472583695, 'Luigi', 'Rojas', 159357, 'CE', '28/02/1997', 'M', 'A');
