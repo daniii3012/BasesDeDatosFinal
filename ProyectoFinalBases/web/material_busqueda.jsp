@@ -130,12 +130,12 @@
 								<%= materialBibliografico.getString("n_tema") %>
 							</td>
 							<td class="reserva">
-								<!--<input type="submit" value="Reservar" class="button">-->
-								<input type="checkbox" id="reservarBibliografico" name="reservarBibliografico" value="<%= materialBibliografico.getString("k_isbnissn") %>">
+								<input type="submit" value="Reservar" class="button">
+								<!--<input type="checkbox" id="reservarBibliografico" name="reservarBibliografico" value="<%= materialBibliografico.getString("k_isbnissn") %>">-->
 							</td>
 						</tr>
 						<% }%>
-						<% while (materialAudiovisual.next()){ %>
+						<%--<% while (materialAudiovisual.next()){ %>
 						<tr>
 							<td>
 								<%= materialAudiovisual.getString("k_isbnissn") %>
@@ -144,7 +144,7 @@
 								<%= materialAudiovisual.getString("n_titulo") %>
 							</td>
 							<td>
-								<%--<%= material.getString("") %>--%> /Autor
+								<%= material.getString("") %> /Autor
 							</td>
 							<td>
 								<%= materialAudiovisual.getString("f_publicacion") %>
@@ -156,15 +156,15 @@
 								<%= materialAudiovisual.getString("n_tema") %>
 							</td>
 							<td class="reserva">
-								<!--<input type="submit" value="Reservar" class="button">-->
-								<input type="checkbox" id="reservarAudiovisual" name="reservarAudiovisual" value="<%= materialAudiovisual.getString("k_isbnissn") %>">
+								<input type="submit" value="Reservar" class="button">
+								<!--<input type="checkbox" id="reservarAudiovisual" name="reservarAudiovisual" value="<%= materialAudiovisual.getString("k_isbnissn") %>">-->
 							</td>
 						</tr>
-						<% }%>
+						<% }%>--%>
 					</table>
 
 
-					<input type="submit" value="Reservar" class="button">
+					<!--<input type="submit" value="Reservar" class="button">-->
 				</div>
 			</form>
 		</div>
