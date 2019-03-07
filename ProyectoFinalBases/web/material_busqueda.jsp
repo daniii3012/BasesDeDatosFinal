@@ -94,16 +94,10 @@
 								Titulo
 							</td>
 							<td>
-								Autor(es)
-							</td>
-							<td>
 								Fecha de Publicacion
 							</td>
 							<td>
 								Tipo de Material
-							</td>
-							<td>
-								Tema
 							</td>
 							<td class="reserva">
 
@@ -118,16 +112,10 @@
 								<%= materialBibliografico.getString("n_titulo") %>
 							</td>
 							<td>
-								<%--<%= material.getString("") %>--%> /Autor
-							</td>
-							<td>
 								<%= materialBibliografico.getString("f_publicacion") %>
 							</td>
 							<td>
 								<%= materialBibliografico.getString("n_tipo") %>
-							</td>
-							<td>
-								<%= materialBibliografico.getString("n_tema") %>
 							</td>
 							<td class="reserva">
 								<input type="submit" value="Reservar" class="button">
