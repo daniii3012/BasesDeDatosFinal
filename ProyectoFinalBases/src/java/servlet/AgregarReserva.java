@@ -55,11 +55,11 @@ public class AgregarReserva extends HttpServlet {
             System.out.println("Bandera");
             ResultSet resCopia = copia.getCopia(idMaterial);
             System.out.println("Bandera2");
-            reserva.agregarReserva(Integer.parseInt(idEstudiante));
+            reserva.agregarReserva(Long.parseLong(idEstudiante));
             System.out.println("Bandera3");
-            ResultSet resReserva = reserva.getReserva(Integer.parseInt(idEstudiante));
+            ResultSet resReserva = reserva.getReserva(Long.parseLong(idEstudiante));
             System.out.println("Bandera4");
-            reserva.agregarReservaCopia(resReserva.getInt("k_reserva"), resCopia.getInt("k_copia"));
+            reserva.agregarReservaCopia(resReserva.getLong("k_reserva"), resCopia.getLong("k_copia"));
             System.out.println("Bandera5");
             /*
             while (resCopia.next()) {
