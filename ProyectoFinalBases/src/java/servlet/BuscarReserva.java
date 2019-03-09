@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import bd.BDMaterial;
 import bd.BDReserva;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -35,21 +36,22 @@ public class BuscarReserva extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         BDReserva reserva = new BDReserva();
-
+        BDMaterial material = new BDMaterial();
+        System.out.println("Bandera");
         try {
-            
             String idEstudiante = request.getParameter("codigo");
             request.getSession().setAttribute("codigoEst", idEstudiante);
-            
+
             ResultSet resReserva = reserva.getReservaPosix(idEstudiante);
             request.getSession().setAttribute("reserva", resReserva);
-            
+
             double idReserva = reserva.getReserva(Double.valueOf(idEstudiante));
-            
+
             ResultSet resReservaCopia = reserva.getReservaCopiaPosix(idReserva);
             request.getSession().setAttribute("reservaCopia", resReservaCopia);
-            
+
             response.sendRedirect("estudiante_reservaciones.jsp");
+
         } catch (Exception e) {
 
         } finally {

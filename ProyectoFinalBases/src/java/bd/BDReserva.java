@@ -39,6 +39,13 @@ public class BDReserva {
         return res;
     }
     
+    public ResultSet getCopiaPosix(double idReserva) throws SQLException {
+        String strSQL = "SELECT * FROM copia WHERE k_copia = '" + idReserva + "'";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+    
     public void agregarReserva(double idReserva, double idEstudiante){
         try {
             
