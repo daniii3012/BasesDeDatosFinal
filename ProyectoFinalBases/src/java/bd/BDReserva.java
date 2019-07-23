@@ -25,24 +25,45 @@ public class BDReserva {
         conexion = new BDConexion();
     }
     
+    public ResultSet getReservaPosix(String idEstudiante) throws SQLException {
+        String strSQL = "SELECT * FROM reserva WHERE k_estudiante = '" + idEstudiante + "'";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+    
+    public ResultSet getReservaCopiaPosix(double idReserva) throws SQLException {
+        String strSQL = "SELECT * FROM reserva_copia WHERE k_reserva = '" + idReserva + "'";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+    
+    public ResultSet getCopiaPosix(double idReserva) throws SQLException {
+        String strSQL = "SELECT * FROM copia WHERE k_copia = '" + idReserva + "'";
+        PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+    
     public void agregarReserva(double idReserva, double idEstudiante){
         try {
             
-            String strSQL1 = "SELECT ? FROM reserva";
+            String strSQL1 = "SELECT * FROM reserva WHERE k_estudiante="+idEstudiante+";";
+            System.out.println(strSQL1);
+            System.out.println(idEstudiante);
             PreparedStatement pstm2 = conexion.getConexion().prepareStatement(strSQL1);
-            pstm2.setDouble(1, idEstudiante);
             ResultSet res = pstm2.executeQuery();
-            
-            while (res.next()){
+            if (res.next() == false){
                 
-                if (res.getRow() == 0){
+                    System.out.println("IF");
                     String strSQL = "INSERT INTO reserva VALUES (?,current_date,current_date, ?, 8, ?)";
                     PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);         
                     pstm.setDouble(1, idReserva);
                     pstm.setString(2, "A");
                     pstm.setDouble(3, idEstudiante);
                     pstm.executeUpdate();  
-                }
+                
             }
             
         } catch (SQLException e) {
@@ -70,12 +91,12 @@ public class BDReserva {
             //Reserva reserva = new Reserva();
             System.out.println("Entre");
             String strSQL = "INSERT INTO reserva_copia (k_reserva, k_copia) VALUES (?,?)";
+            
             PreparedStatement pstm = conexion.getConexion().prepareStatement(strSQL);
             
             pstm.setDouble(1, idReserva);
             pstm.setDouble(2, idCopia);
             pstm.executeUpdate();
-
         } catch (SQLException e) {
             System.out.println(e);
         }

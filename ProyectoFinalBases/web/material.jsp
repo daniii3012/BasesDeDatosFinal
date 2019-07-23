@@ -65,8 +65,10 @@
 							<td>
 								<input type="radio" name="tipo" id="tipoBibliografico"
 									onclick="tipoMaterial();">Bibliográfico
+									<!--
 								<input type="radio" name="tipo" id="tipoAudiovisual"
 									onclick="tipoMaterial();">Audiovisual
+									-->
 							</td>
 							<td id="bibliografico" style="display: none">
 								<select id="tipoBibliograficoSelect" name="tipoBibliograficoSelect">

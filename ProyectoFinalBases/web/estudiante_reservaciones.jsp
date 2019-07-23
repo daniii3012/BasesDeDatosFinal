@@ -1,13 +1,15 @@
-<%@page contentType="text/html"%> 
-<%@page pageEncoding="UTF-8"%> 
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
 
-<%--<%@page import=""%>
-<%@page import=""%>
-<%@page import="java.sql.ResultSet"%>--%>
+<%@page import="java.util.List"%>
+<%@page import="logica.Material"%>
+<%@page import="logica.Reserva"%>
+<%@page import="java.sql.ResultSet"%>
 
 <!DOCTYPE html>
 
-<%--<% ResultSet nombreVariable = (ResultSet)session.getAttribute("/*atributo*/"); %>--%>
+<% ResultSet reservaBD = (ResultSet)session.getAttribute("reserva"); %>
+<% ResultSet reservaCopiaBD = (ResultSet)session.getAttribute("reservaCopia"); %>
 
 <html>
 
@@ -43,27 +45,42 @@
 					</tr>
 					<tr>
 						<td>
-							<input class="inputColor" type="number" id="" placeholder="Codigo" disabled>
+							<input class="inputColor" type="number" id="" <c:out value="${codigoEst}" disabled>
 						</td>
 					</tr>
 				</table>
 			</div>
 			<div class="divTabla" align="center">
-				<%--<% while (nombreVariable.next()){ %>--%>
+
 				<table class="busqueda">
-					<tr>
+					<tr class="busquedaTitulo">
 						<td>
-							<%--<%= nombreVariable.getString("k_id") %>--%> /IDReserva
+							IDReserva
 						</td>
 						<td>
-							<%--<%= nombreVariable.getString("k_id") %>--%> /Material
+							Fecha de Reservacion
 						</td>
 						<td>
-							<%--<%= nombreVariable.getString("k_id") %>--%> /Fecha
+							Materiales
 						</td>
 					</tr>
+					<% while (reservaBD.next()){ %>
+					<tr>
+						<td>
+							<%= reservaBD.getString("k_reserva") %>
+						</td>
+						<td>
+							<%= reservaBD.getString("f_reservacion") %>
+						</td>
+						<td>
+							<% while (reservaCopiaBD.next()){ %>
+								<%= reservaCopiaBD.getString("k_copia") %></br>
+							<% }%>
+						</td>
+					</tr>
+					<% }%>
 				</table>
-				<%--<% }%>--%>
+
 			</div>
 		</div>
 		<input type="submit" value="Volver" class="button" onclick="goBack()">
